@@ -24,55 +24,55 @@ main_dishes:
     - name: coriander
       quantity: 3
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 3
       unit: tsp
-    - name: turmeric
+    - name: ground_turmeric
       quantity: 3
       unit: tsp
     - name: paprika
       quantity: 3
       unit: tsp
-    - name: chilli powder
+    - name: chilli_powder
       quantity: 2.5
       unit: tsp
-    - name: curry powder
+    - name: curry_powder
       quantity: 7
       unit: tsp
     - name: salt
       quantity: 2.5
       unit: tsp
-    - name: white sugar
+    - name: white_sugar
       quantity: 4
       unit: tsp
-    - name: chicken thigh fillets
+    - name: chicken_thigh_fillets
       quantity: 1500
       unit: g
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: garlic
       quantity: 8
       unit: whole
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 1
       unit: whole
     - name: peanuts
       quantity: 200
       unit: g
-    - name: kecap manis
+    - name: kecap_manis
       quantity: 4
       unit: tsp
-    - name: dark soy sauce
+    - name: dark_soy_sauce
       quantity: 3
       unit: tsp
-    - name: coconut milk
+    - name: coconut_milk
       quantity: 2
       unit: can
-    - name: peanut butter
+    - name: peanut_butter
       quantity: 12
       unit: tsp
-    - name: lime juice
+    - name: lime_juice
       quantity: 12
       unit: tsp
     - name: lemongrass
@@ -106,7 +106,7 @@ main_dishes:
     - chicken dish
     - staple recipe
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
     - name: onion
@@ -115,40 +115,40 @@ main_dishes:
     - name: ginger
       quantity: 3
       unit: tsp
-    - name: spring onions
+    - name: spring_onion
       quantity: 4
       unit: whole
-    - name: fresh coriander
+    - name: fresh_coriander
       quantity: 0.5
       unit: bag
-    - name: lime juice
+    - name: lime_juice
       quantity: 9
       unit: tsp
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 6
       unit: tsp
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 1
       unit: whole
-    - name: paprika
+    - name: smoked_paprika
       quantity: 2
       unit: tsp
-    - name: garam masala
+    - name: garam_masala
       quantity: 2
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 1.5
       unit: tsp
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 1
       unit: tsp
-    - name: cayenne pepper
+    - name: cayenne_pepper
       quantity: 0.5
       unit: tsp
-    - name: ground turmeric
+    - name: ground_turmeric
       quantity: 0.5
       unit: tsp
-    - name: cashew nuts
+    - name: cashew_nuts
       quantity: 200
       unit: g
     - name: garlic
@@ -176,28 +176,28 @@ main_dishes:
     - pasta bake
     - chicken dish
     ingredients:
-    - name: streaky bacon
+    - name: streaky_bacon
       quantity: 150
       unit: g
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
     - name: onion
       quantity: 1
       unit: whole
-    - name: tomato passata
+    - name: tomato_passata
       quantity: 1400
       unit: g
     - name: tomatoes
       quantity: 6
       unit: whole
-    - name: baby spinach
+    - name: spinach
       quantity: 100
       unit: g
     - name: pasta
       quantity: 600
       unit: g
-    - name: ball mozzarella
+    - name: mozzarella
       quantity: 1
       unit: whole
       optional: true
@@ -205,22 +205,22 @@ main_dishes:
       quantity: 100
       unit: g
       optional: true
-    - name: cheddar cheese
+    - name: cheddar
       quantity: 300
       unit: g
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 12
       unit: tsp
-    - name: Italian herb mix
+    - name: italian_herb_mix
       quantity: 4
       unit: tsp
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 1
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 3
       unit: tsp
-    - name: chilli flakes
+    - name: chilli_flakes
       quantity: 1
       unit: tsp
       optional: true
@@ -247,10 +247,10 @@ main_dishes:
     - curry
     - chicken dish
     ingredients:
-    - name: chicken thigh fillets
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: ginger
@@ -259,34 +259,34 @@ main_dishes:
     - name: broccoli
       quantity: 1
       unit: whole
-    - name: fresh coriander
+    - name: fresh_coriander
       quantity: 0.5
       unit: bag
-    - name: coconut milk
+    - name: coconut_milk
       quantity: 2
       unit: can
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: star anise
+    - name: star_anise
       quantity: 3
       unit: whole
-    - name: cinnamon stick
+    - name: cinnamon_stick
       quantity: 1
       unit: whole
-    - name: turmeric powder
+    - name: ground_turmeric
       quantity: 3
       unit: tsp
-    - name: garam masala
+    - name: garam_masala
       quantity: 3
       unit: tsp
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 3
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 1
       unit: tsp
-    - name: fennel powder
+    - name: fennel_powder
       quantity: 1
       unit: tsp
       optional: true
@@ -317,28 +317,28 @@ main_dishes:
     - healthy
     - chicken dish
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: sweet potato
+    - name: sweet_potato
       quantity: 1
       unit: whole
-    - name: green beans
+    - name: green_bean
       quantity: 200
       unit: g
-    - name: coconut milk
+    - name: coconut_milk
       quantity: 2
       unit: can
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 1
       unit: whole
-    - name: Thai Red Curry Paste
+    - name: thai_red_curry_paste
       quantity: 9
       unit: tsp
     - name: lemongrass
       quantity: 1
       unit: whole
-    - name: fish sauce
+    - name: fish_sauce
       quantity: 4
       unit: tsp
     - name: garlic
@@ -368,28 +368,28 @@ main_dishes:
     - chicken dish
     - French
     ingredients:
-    - name: bone-in chicken thighs
+    - name: bone_in_chicken_thighs
       quantity: 1000
       unit: g
-    - name: unsalted butter
+    - name: unsalted_butter
       quantity: 60
       unit: g
-    - name: mushrooms
+    - name: mushroom
       quantity: 400
       unit: g
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: garlic
       quantity: 3
       unit: whole
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 9
       unit: tsp
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: dried tarragon
+    - name: dried_tarragon
       quantity: 1
       unit: tsp
     side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
@@ -417,46 +417,46 @@ main_dishes:
     - Middle Eastern
     - wraps
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 600
       unit: g
-    - name: flatbreads
+    - name: flatbread
       quantity: 4
       unit: whole
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 2
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 2
       unit: tsp
-    - name: ground cardamom
+    - name: ground_cardamom
       quantity: 2
       unit: tsp
-    - name: ground cayenne pepper
+    - name: cayenne_pepper
       quantity: 0.5
       unit: tsp
-    - name: smoked paprika
+    - name: smoked_paprika
       quantity: 2
       unit: tsp
-    - name: lemon juice
+    - name: lemon_juice
       quantity: 6
       unit: tsp
-    - name: olive oil
+    - name: olive_oil
       quantity: 9
       unit: tsp
     - name: garlic
       quantity: 2
       unit: whole
-    - name: greek yoghurt
+    - name: greek_yoghurt
       quantity: 200
       unit: g
     - name: lettuce
       quantity: 50
       unit: g
-    - name: red onion
+    - name: red_onion
       quantity: 0.25
       unit: whole
-    - name: Cheese
+    - name: cheddar
       quantity: 25
       unit: g
       optional: true
@@ -483,31 +483,31 @@ main_dishes:
     - chicken dish
     - rice-based
     ingredients:
-    - name: chicken breast
+    - name: chicken_breast_fillets
       quantity: 600
       unit: g
-    - name: smoked paprika
+    - name: smoked_paprika
       quantity: 3
       unit: tsp
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: garlic
       quantity: 4
       unit: whole
-    - name: green peppers
+    - name: green_pepper
       quantity: 2
       unit: whole
-    - name: mushrooms
+    - name: mushroom
       quantity: 300
       unit: g
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: soured cream
+    - name: soured_cream
       quantity: 150
       unit: ml
-    - name: sugar snap peas
+    - name: sugar_snap_pea
       quantity: 300
       unit: g
     side_dishes:
@@ -535,31 +535,31 @@ main_dishes:
     - name: onion
       quantity: 1
       unit: whole
-    - name: red onion
+    - name: red_onion
       quantity: 1
       unit: whole
-    - name: new potatoes
+    - name: new_potato
       quantity: 500
       unit: g
     - name: garlic
       quantity: 8
       unit: whole
-    - name: medium tomatoes
-      quantity: 8
-      unit: whole
+    - name: tomatoes
+      quantity: 500
+      unit: g
     - name: chorizo
       quantity: 200
       unit: g
-    - name: bone-in chicken thighs
+    - name: bone_in_chicken_thighs
       quantity: 1000
       unit: g
-    - name: smoked paprika
+    - name: smoked_paprika
       quantity: 0.5
       unit: tsp
     - name: oregano
       quantity: 0.5
       unit: tsp
-    - name: green pepper
+    - name: green_pepper
       quantity: 1
       unit: whole
   ping_gai_chicken:
@@ -583,25 +583,25 @@ main_dishes:
     - chicken dish
     - rice-based
     ingredients:
-    - name: chicken thigh fillets
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: whole black peppercorns
+    - name: black_peppercorns
       quantity: 3
       unit: tsp
-    - name: fresh coriander
+    - name: fresh_coriander
       quantity: 0.5
       unit: bag
-    - name: oyster sauce
+    - name: oyster_sauce
       quantity: 9
       unit: tsp
-    - name: soy sauce
+    - name: light_soy_sauce
       quantity: 6
       unit: tsp
-    - name: fish sauce
+    - name: fish_sauce
       quantity: 6
       unit: tsp
-    - name: cayenne pepper
+    - name: cayenne_pepper
       quantity: 0.5
       unit: tsp
     side_dishes:
@@ -629,40 +629,40 @@ main_dishes:
     - chicken burger
     - staple recipe
     ingredients:
-    - name: chicken breast fillets
+    - name: chicken_breast_fillets
       quantity: 1000
       unit: g
-    - name: red chilli
+    - name: red_chilli
       quantity: 1
       unit: whole
-    - name: red pepper
+    - name: red_pepper
       quantity: 1
       unit: whole
-    - name: soured cream
+    - name: soured_cream
       quantity: 150
       unit: g
     - name: mayonnaise
       quantity: 300
       unit: ml
-    - name: malt vinegar
+    - name: malt_vinegar
       quantity: 60
       unit: ml
-    - name: smoked paprika
+    - name: smoked_paprika
       quantity: 6
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 3
       unit: tsp
-    - name: onion powder
+    - name: onion_powder
       quantity: 2
       unit: tsp
     - name: garlic
       quantity: 5
       unit: whole
-    - name: burger buns
+    - name: burger_buns
       quantity: 6
       unit: whole
-    - name: red onion
+    - name: red_onion
       quantity: 1
       unit: whole
     - name: lettuce
@@ -694,28 +694,28 @@ main_dishes:
     - tasty
     - chicken dish
     ingredients:
-    - name: chicken breast
+    - name: chicken_breast_fillets
       quantity: 600
       unit: g
-    - name: dijon mustard
+    - name: dijon_mustard
       quantity: 4
       unit: tsp
-    - name: mushrooms
+    - name: mushroom
       quantity: 200
       unit: g
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: garlic
       quantity: 4
       unit: whole
-    - name: dried tarragon
+    - name: dried_tarragon
       quantity: 2
       unit: tsp
-    - name: single cream
+    - name: single_cream
       quantity: 100
       unit: ml
       optional: true
@@ -743,37 +743,37 @@ main_dishes:
     - chicken stir fry
     - quick and easy
     ingredients:
-    - name: udon noodles
+    - name: udon_noodles
       quantity: 1000
       unit: g
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 600
       unit: g
     - name: garlic
       quantity: 4
       unit: whole
-    - name: spring onions
+    - name: spring_onion
       quantity: 1
       unit: whole
-    - name: red peppers
+    - name: red_pepper
       quantity: 2
       unit: whole
-    - name: green cabbage
+    - name: green_cabbage
       quantity: 1
       unit: whole
-    - name: light soy sauce
+    - name: light_soy_sauce
       quantity: 6
       unit: tsp
-    - name: dark soy sauce
+    - name: dark_soy_sauce
       quantity: 5
       unit: tsp
-    - name: oyster sauce
+    - name: oyster_sauce
       quantity: 6
       unit: tsp
-    - name: Chinese cooking wine
+    - name: chinese_cooking_wine
       quantity: 3
       unit: tsp
-    - name: sesame oil
+    - name: sesame_oil
       quantity: 3
       unit: tsp
   chicken_gyros:
@@ -798,49 +798,49 @@ main_dishes:
     - Greek
     - wraps
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
     - name: paprika
       quantity: 6
       unit: tsp
-    - name: dijon mustard
+    - name: dijon_mustard
       quantity: 3
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 3
       unit: tsp
-    - name: curry powder
+    - name: curry_powder
       quantity: 1.5
       unit: tsp
-    - name: greek yoghurt
+    - name: greek_yoghurt
       quantity: 250
       unit: g
     - name: mayonnaise
       quantity: 50
       unit: g
-    - name: olive oil
+    - name: olive_oil
       quantity: 50
       unit: ml
-    - name: American mustard
+    - name: american_mustard
       quantity: 6
       unit: tsp
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 2
       unit: tsp
     - name: lettuce
       quantity: 50
       unit: g
-    - name: red onion
+    - name: red_onion
       quantity: 0.25
       unit: whole
     - name: tomatoes
       quantity: 30
       unit: g
-    - name: flatbreads
+    - name: flatbread
       quantity: 6
       unit: whole
-    - name: cheese
+    - name: cheddar
       quantity: 25
       unit: g
       optional: true
@@ -867,34 +867,34 @@ main_dishes:
     - eat at home
     - chicken wings
     ingredients:
-    - name: chicken wings
+    - name: chicken_wings
       quantity: 1000
       unit: g
-    - name: fresh coriander
+    - name: fresh_coriander
       quantity: 0.5
       unit: bag
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 0.5
       unit: tsp
     - name: butter
       quantity: 50
       unit: g
-    - name: brown sugar
+    - name: brown_sugar
       quantity: 5
       unit: tsp
-    - name: paprika
+    - name: smoked_paprika
       quantity: 2.5
       unit: tsp
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 1
       unit: tsp
-    - name: onion powder
+    - name: onion_powder
       quantity: 1
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 0.5
       unit: tsp
-    - name: cayenne pepper
+    - name: cayenne_pepper
       quantity: 0.25
       unit: tsp
     - name: garlic
@@ -924,28 +924,28 @@ main_dishes:
     - pie
     - British
     ingredients:
-    - name: streaky bacon
+    - name: streaky_bacon
       quantity: 150
       unit: g
-    - name: chicken thigh fillets
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: leeks
+    - name: leek
       quantity: 2
       unit: whole
     - name: celery
       quantity: 4
       unit: whole
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 0.5
       unit: tsp
-    - name: double cream
+    - name: double_cream
       quantity: 300
       unit: ml
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 1
       unit: whole
-    - name: dijon mustard
+    - name: dijon_mustard
       quantity: 3
       unit: tsp
     - name: garlic
@@ -976,10 +976,10 @@ main_dishes:
     - copy-cat
     - chicken dish
     ingredients:
-    - name: bone-in chicken thighs
+    - name: bone_in_chicken_thighs
       quantity: 2000
       unit: g
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 1.5
       unit: tsp
     - name: egg
@@ -988,43 +988,43 @@ main_dishes:
     - name: milk
       quantity: 250
       unit: ml
-    - name: white wine vinegar
+    - name: white_wine_vinegar
       quantity: 3
       unit: tsp
-    - name: plain flour
+    - name: plain_flour
       quantity: 365
       unit: g
     - name: cornflour
       quantity: 115
       unit: g
-    - name: celery salt
+    - name: celery_salt
       quantity: 0.75
       unit: tsp
-    - name: sweet paprika
+    - name: paprika
       quantity: 1.5
       unit: tsp
-    - name: cayenne pepper
+    - name: cayenne_pepper
       quantity: 0.5
       unit: tsp
-    - name: onion powder
+    - name: onion_powder
       quantity: 1.5
       unit: tsp
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 3
       unit: tsp
-    - name: mustard powder
+    - name: mustard_powder
       quantity: 1
       unit: tsp
-    - name: ginger powder
+    - name: ground_ginger
       quantity: 0.75
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 1.5
       unit: tsp
     - name: salt
       quantity: 3
       unit: tsp
-    - name: black pepper
+    - name: black_peppercorns
       quantity: 4.5
       unit: tsp
     side_dishes:
@@ -1049,37 +1049,37 @@ main_dishes:
     - curry
     - rice-based
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: onions
+    - name: onion
       quantity: 2
       unit: whole
     - name: ginger
       quantity: 3
       unit: tsp
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 2
       unit: can
-    - name: fresh coriander
+    - name: fresh_coriander
       quantity: 0.5
       unit: bag
-    - name: coconut milk
+    - name: coconut_milk
       quantity: 2
       unit: can
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 6
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 3
       unit: tsp
-    - name: turmeric powder
+    - name: ground_turmeric
       quantity: 3
       unit: tsp
-    - name: chilli powder
+    - name: chilli_powder
       quantity: 2
       unit: tsp
-    - name: lemon juice
+    - name: lemon_juice
       quantity: 12
       unit: tsp
     - name: garlic
@@ -1107,11 +1107,11 @@ main_dishes:
     - batch cooking
     - quick dinner
     ingredients:
-    - name: smoked gammon
+    - name: smoked_gammon
       quantity: 300
       unit: g
       optional: true
-    - name: chicken breast
+    - name: chicken_breast_fillets
       quantity: 600
       unit: g
     - name: onion
@@ -1120,28 +1120,28 @@ main_dishes:
     - name: carrot
       quantity: 1
       unit: whole
-    - name: spring onion
+    - name: spring_onion
       quantity: 4
       unit: whole
-    - name: white rice
+    - name: white_rice
       quantity: 400
       unit: g
     - name: eggs
       quantity: 4
       unit: whole
-    - name: frozen peas
+    - name: frozen_peas
       quantity: 100
       unit: g
-    - name: oyster sauce
+    - name: oyster_sauce
       quantity: 6
       unit: tsp
-    - name: light soy sauce
+    - name: light_soy_sauce
       quantity: 18
       unit: tsp
-    - name: sesame oil
+    - name: sesame_oil
       quantity: 1
       unit: tsp
-    - name: Chinese cooking wine or Mirin
+    - name: chinese_cooking_wine
       quantity: 7.5
       unit: tsp
     - name: garlic
@@ -1169,7 +1169,7 @@ main_dishes:
     - rice-based
     - healthy
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
     - name: lemongrass
@@ -1178,19 +1178,19 @@ main_dishes:
     - name: garlic
       quantity: 4
       unit: whole
-    - name: fish sauce
+    - name: fish_sauce
       quantity: 7.5
       unit: tsp
-    - name: light soy sauce
+    - name: light_soy_sauce
       quantity: 3
       unit: tsp
-    - name: dark soy sauce
+    - name: dark_soy_sauce
       quantity: 2
       unit: tsp
-    - name: brown sugar
+    - name: brown_sugar
       quantity: 9
       unit: tsp
-    - name: sweet chilli sauce
+    - name: sweet_chilli_sauce
       quantity: 9
       unit: tsp
     side_dishes:
@@ -1217,19 +1217,19 @@ main_dishes:
     - stew
     - pasta-based
     ingredients:
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
-    - name: Italian herb mix
+    - name: italian_herb_mix
       quantity: 2
       unit: tsp
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 1
       unit: tsp
     - name: onion
       quantity: 1
       unit: whole
-    - name: red pepper
+    - name: red_pepper
       quantity: 1
       unit: whole
       optional: true
@@ -1240,23 +1240,23 @@ main_dishes:
     - name: garlic
       quantity: 3
       unit: whole
-    - name: sundried tomatoes
+    - name: sundried_tomatoes
       quantity: 100
       unit: g
       optional: true
-    - name: cherry tomatoes
+    - name: tomatoes
       quantity: 200
       unit: g
-    - name: butter beans
+    - name: butter_beans
       quantity: 2
       unit: can
-    - name: plain flour
+    - name: plain_flour
       quantity: 50
       unit: g
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: single cream
+    - name: single_cream
       quantity: 250
       unit: ml
     - name: cheddar
@@ -1287,28 +1287,28 @@ main_dishes:
     - vegetarian
     - low-protein
     ingredients:
-    - name: red onions
+    - name: red_onion
       quantity: 2
       unit: whole
-    - name: carrots
+    - name: carrot
       quantity: 300
       unit: g
     - name: garlic
       quantity: 3
       unit: whole
-    - name: red lentils
+    - name: red_lentils
       quantity: 225
       unit: g
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 1
       unit: can
-    - name: chicken stock cube
+    - name: chicken_stock_cube
       quantity: 3
       unit: whole
     - name: spaghetti
       quantity: 350
       unit: g
-    - name: fresh basil
+    - name: fresh_basil
       quantity: 0.5
       unit: bag
       optional: true
@@ -1338,10 +1338,10 @@ main_dishes:
     - tasty
     - staple recipe
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: onion
@@ -1350,28 +1350,28 @@ main_dishes:
     - name: garlic
       quantity: 3
       unit: whole
-    - name: chilli powder
+    - name: chilli_powder
       quantity: 2
       unit: tsp
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 4
       unit: tsp
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 4
       unit: tsp
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 2
       unit: can
-    - name: red kidney beans
+    - name: red_kidney_beans
       quantity: 2
       unit: can
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 9
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 1
       unit: tsp
       optional: true
@@ -1394,10 +1394,10 @@ main_dishes:
     - pasta dish
     - red meat
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: onion
@@ -1415,16 +1415,16 @@ main_dishes:
     - name: bacon
       quantity: 200
       unit: g
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 1
       unit: can
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 6
       unit: tsp
-    - name: parmesan cheese
+    - name: parmesan
       quantity: 100
       unit: g
     side_dishes:
@@ -1450,10 +1450,10 @@ main_dishes:
     - more expensive
     - treat
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: onion
@@ -1468,29 +1468,29 @@ main_dishes:
     - name: garlic
       quantity: 4
       unit: whole
-    - name: ground cinnamon
+    - name: ground_cinnamon
       quantity: 0.5
       unit: tsp
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 0.5
       unit: tsp
-    - name: dried rosemary
+    - name: dried_rosemary
       quantity: 0.5
       unit: tsp
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 6
       unit: tsp
-    - name: red wine
+    - name: red_wine
       quantity: 750
       unit: ml
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 1
       unit: whole
-    - name: fresh thyme
+    - name: fresh_thyme
       quantity: 0.5
       unit: bag
       optional: true
-    - name: fresh rosemary
+    - name: fresh_rosemary
       quantity: 0.5
       unit: bag
       optional: true
@@ -1517,10 +1517,10 @@ main_dishes:
     - pasta dish
     - oven required
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: onion
@@ -1538,19 +1538,19 @@ main_dishes:
     - name: bacon
       quantity: 200
       unit: g
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 1
       unit: can
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 6
       unit: tsp
-    - name: parmesan cheese
+    - name: parmesan
       quantity: 100
       unit: g
-    - name: lasagna sheets
+    - name: lasagna_sheets
       quantity: 500
       unit: g
     - name: flour
@@ -1583,22 +1583,22 @@ main_dishes:
     - tasty
     - quick and easy
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: red onion
+    - name: red_onion
       quantity: 1
       unit: whole
-    - name: burger buns
+    - name: burger_buns
       quantity: 4
       unit: whole
-    - name: tomato ketchup
+    - name: tomato_ketchup
       quantity: 100
       unit: ml
     - name: mayonnaise
       quantity: 100
       unit: ml
-    - name: american mustard
+    - name: american_mustard
       quantity: 6
       unit: tsp
     - name: lettuce
@@ -1607,7 +1607,7 @@ main_dishes:
     - name: gherkins
       quantity: 4
       unit: whole
-    - name: cheese slices
+    - name: cheese_slices
       quantity: 8
       unit: whole
     - name: bacon
@@ -1639,10 +1639,10 @@ main_dishes:
     - adventurous
     - red meat
     ingredients:
-    - name: beef mince
+    - name: beef_mince
       quantity: 500
       unit: g
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: onion
@@ -1654,25 +1654,25 @@ main_dishes:
     - name: egg
       quantity: 2
       unit: whole
-    - name: unsalted butter
+    - name: unsalted_butter
       quantity: 60
       unit: g
-    - name: single cream
+    - name: single_cream
       quantity: 180
       unit: ml
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: plain flour
+    - name: plain_flour
       quantity: 45
       unit: g
     - name: oil
       quantity: 3
       unit: tsp
-    - name: ground nutmeg
+    - name: ground_nutmeg
       quantity: 0.5
       unit: tsp
-    - name: allspice powder
+    - name: allspice_powder
       quantity: 0.5
       unit: tsp
     side_dishes:
@@ -1698,37 +1698,37 @@ main_dishes:
     - eat at home
     - unhealthy
     ingredients:
-    - name: pork shoulder
+    - name: pork_shoulder
       quantity: 2000
       unit: g
     - name: onion
       quantity: 1
       unit: whole
-    - name: butter beans
+    - name: butter_beans
       quantity: 4
       unit: can
-    - name: chipotle paste. # TODO: decide whether to just show as 1 can
+    - name: chipotle_paste
       quantity: 90
       unit: g
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 12
       unit: tsp
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: ground cumin
+    - name: ground_cumin
       quantity: 4.5
       unit: tsp
-    - name: dried oregano
+    - name: dried_oregano
       quantity: 4.5
       unit: tsp
-    - name: ground coriander
+    - name: ground_coriander
       quantity: 1.5
       unit: tsp
-    - name: allspice powder
+    - name: allspice_powder
       quantity: 0.5
       unit: tsp
-    - name: orange juice
+    - name: orange_juice
       quantity: 300
       unit: ml
     - name: garlic
@@ -1757,22 +1757,22 @@ main_dishes:
     - eat at home
     - expensive
     ingredients:
-    - name: salmon fillets
+    - name: salmon_fillets
       quantity: 500
       unit: g
     - name: asparagus
       quantity: 12
       unit: whole
-    - name: cherry tomatoes
+    - name: tomatoes
       quantity: 200
       unit: g
     - name: lemon
       quantity: 1
       unit: whole
-    - name: dijon mustard
+    - name: dijon_mustard
       quantity: 1
       unit: tsp
-    - name: extra-virgin olive oil
+    - name: olive_oil
       quantity: 6
       unit: tsp
     - name: garlic
@@ -1806,17 +1806,17 @@ main_dishes:
     - name: pancetta
       quantity: 200
       unit: g
-    - name: red chilli
+    - name: red_chilli
       quantity: 1
       unit: whole
       optional: true
-    - name: passata
+    - name: tomato_passata
       quantity: 400
       unit: g
     - name: parmesan
       quantity: 75
       unit: g
-    - name: cherry tomatoes
+    - name: tomatoes
       quantity: 100
       unit: g
     - name: parsley
@@ -1844,10 +1844,10 @@ main_dishes:
     - chicken dish
     - oven required
     ingredients:
-    - name: streaky bacon
+    - name: streaky_bacon
       quantity: 150
       unit: g
-    - name: chicken thighs
+    - name: chicken_thigh_fillets
       quantity: 1000
       unit: g
     - name: leek
@@ -1856,7 +1856,7 @@ main_dishes:
     - name: pasta
       quantity: 600
       unit: g
-    - name: cheddar cheese
+    - name: cheddar
       quantity: 400
       unit: g
     - name: garlic
@@ -1865,7 +1865,7 @@ main_dishes:
     - name: milk
       quantity: 1500
       unit: ml
-    - name: plain flour
+    - name: plain_flour
       quantity: 100
       unit: g
     - name: butter
@@ -1894,10 +1894,10 @@ main_dishes:
     - name: macaroni
       quantity: 375
       unit: g
-    - name: cheddar cheese
+    - name: cheddar
       quantity: 300
       unit: g
-    - name: mozzarella cheese
+    - name: mozzarella
       quantity: 150
       unit: g
     - name: butter
@@ -1906,16 +1906,16 @@ main_dishes:
     - name: milk
       quantity: 1100
       unit: ml
-    - name: plain flour
+    - name: plain_flour
       quantity: 90
       unit: g
-    - name: garlic powder
+    - name: garlic_powder
       quantity: 1.5
       unit: tsp
-    - name: onion powder
+    - name: onion_powder
       quantity: 0.75
       unit: tsp
-    - name: mustard powder
+    - name: mustard_powder
       quantity: 0.75
       unit: tsp
   pork_meatballs:
@@ -1940,7 +1940,7 @@ main_dishes:
     - pork dish
     - Italian
     ingredients:
-    - name: pork mince
+    - name: pork_mince
       quantity: 500
       unit: g
     - name: bread
@@ -1949,35 +1949,35 @@ main_dishes:
     - name: smoked bacon
       quantity: 100
       unit: g
-    - name: Dijon mustard
+    - name: dijon_mustard
       quantity: 1
       unit: tsp
     - name: egg
       quantity: 1
       unit: whole
-    - name: red onion
+    - name: red_onion
       quantity: 1
       unit: whole
-    - name: fresh sage
+    - name: fresh_sage
       quantity: 0.5
       unit: bag
-    - name: fennel seeds
+    - name: fennel_seeds
       quantity: 0.5
       unit: tsp
-    - name: fennel bulb
+    - name: fennel_bulb
       quantity: 1
       unit: whole
     - name: garlic
       quantity: 2
       unit: whole
-    - name: white wine
+    - name: white_wine
       quantity: 100
       unit: ml
       optional: true
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 1
       unit: can
-    - name: Parmesan
+    - name: parmesan
       quantity: 50
       unit: g
     side_dishes:
@@ -2002,7 +2002,7 @@ main_dishes:
     - chicken dish
     - cheap
     ingredients:
-    - name: chicken breast
+    - name: chicken_breast_fillets
       quantity: 150
       unit: g
     - name: pesto
@@ -2029,10 +2029,10 @@ main_dishes:
     - tasty
     - treat
     ingredients:
-    - name: pork sausages
+    - name: pork_sausages
       quantity: 500
       unit: g
-    - name: beef sausages
+    - name: beef_sausages
       quantity: 500
       unit: g
     - name: onion
@@ -2044,26 +2044,26 @@ main_dishes:
     - name: celery
       quantity: 3
       unit: whole
-    - name: chopped tomatoes
+    - name: chopped_tomatoes
       quantity: 1
       unit: can
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 0.5
       unit: tsp
-    - name: chilli flakes
+    - name: chilli_flakes
       quantity: 0.25
       unit: tsp
       optional: true
-    - name: tomato puree
+    - name: tomato_puree
       quantity: 6
       unit: tsp
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 2
       unit: whole
-    - name: star anise
+    - name: star_anise
       quantity: 1
       unit: whole
-    - name: pinot noir red wine
+    - name: red_wine
       quantity: 250
       unit: ml
       optional: true
@@ -2098,7 +2098,7 @@ main_dishes:
     - name: asparagus
       quantity: 750
       unit: g
-    - name: bicarbonate of soda
+    - name: bicarbonate_of_soda
       quantity: 0.25
       unit: tsp
     - name: onion
@@ -2107,10 +2107,10 @@ main_dishes:
     - name: garlic
       quantity: 3
       unit: whole
-    - name: risotto rice
+    - name: risotto_rice
       quantity: 300
       unit: g
-    - name: white wine
+    - name: white_wine
       quantity: 200
       unit: ml
     - name: butter
@@ -2122,7 +2122,7 @@ main_dishes:
     - name: lemon
       quantity: 1
       unit: whole
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 4
       unit: whole
   pea_and_pancetta_risotto:
@@ -2145,10 +2145,10 @@ main_dishes:
     - dinner party
     - treat
     ingredients:
-    - name: risotto rice
+    - name: risotto_rice
       quantity: 300
       unit: g
-    - name: chicken stock cubes
+    - name: chicken_stock_cube
       quantity: 4
       unit: whole
     - name: garlic
@@ -2157,25 +2157,25 @@ main_dishes:
     - name: onion
       quantity: 1
       unit: whole
-    - name: white wine
+    - name: white_wine
       quantity: 150
       unit: ml
     - name: pancetta
       quantity: 100
       unit: g
-    - name: mushrooms
+    - name: mushroom
       quantity: 250
       unit: g
     - name: mascarpone
       quantity: 50
       unit: g
-    - name: Parmesan
+    - name: parmesan
       quantity: 75
       unit: g
     - name: butter
       quantity: 30
       unit: g
-    - name: frozen peas
+    - name: frozen_peas
       quantity: 50
       unit: g
     - name: parsley
@@ -2202,22 +2202,22 @@ sides:
     - easy
     - quick
     ingredients:
-    - name: new potatoes
+    - name: new_potato
       quantity: 1000
       unit: g
     - name: mayonnaise
       quantity: 6
       unit: tsp
-    - name: Greek yoghurt
+    - name: greek_yoghurt
       quantity: 6
       unit: tsp
-    - name: spring onions
+    - name: spring_onion
       quantity: 3
       unit: whole
     - name: gherkins
       quantity: 4
       unit: whole
-    - name: Dijon mustard
+    - name: dijon_mustard
       quantity: 1
       unit: tsp
   boiled_rice:
@@ -2239,7 +2239,7 @@ sides:
     - side-dish
     - no subsequent occasions
     ingredients:
-    - name: white rice
+    - name: white_rice
       quantity: 100
       unit: g
   ratatouille:
@@ -2270,26 +2270,26 @@ sides:
     - name: onion
       quantity: 2
       unit: whole
-    - name: red pepper
+    - name: red_pepper
       quantity: 2
       unit: whole
-    - name: courgettes
+    - name: courgette
       quantity: 2
       unit: whole
     - name: garlic
       quantity: 2
       unit: whole
-    - name: dried thyme
+    - name: dried_thyme
       quantity: 0.5
       unit: tsp
-    - name: black olives
+    - name: black_olives
       quantity: 0.5
       unit: can
       optional: true
-    - name: fresh basil
+    - name: fresh_basil
       quantity: 0.5
       unit: bag
-    - name: olive oil
+    - name: olive_oil
       quantity: 18
       unit: tsp
   mashed_potatoes:
@@ -2337,10 +2337,10 @@ sides:
     tags:
     - side dish
     ingredients:
-    - name: new potatoes
+    - name: new_potato
       quantity: 1000
       unit: g
-    - name: Italian herb mix
+    - name: italian_herb_mix
       quantity: 1
       unit: tsp
   potato_wedges:
@@ -2389,28 +2389,28 @@ sides:
     - name: carrot
       quantity: 1
       unit: whole
-    - name: spring onion
+    - name: spring_onion
       quantity: 4
       unit: whole
-    - name: white rice
+    - name: white_rice
       quantity: 200
       unit: g
-    - name: eggs
+    - name: egg
       quantity: 2
       unit: whole
-    - name: frozen peas
+    - name: frozen_peas
       quantity: 50
       unit: g
-    - name: oyster sauce
+    - name: oyster_sauce
       quantity: 3
       unit: tsp
-    - name: light soy sauce
+    - name: light_soy_sauce
       quantity: 3
       unit: tsp
-    - name: sesame oil
+    - name: sesame_oil
       quantity: 1
       unit: tsp
-    - name: Chinese cooking wine or Mirin
+    - name: chinese_cooking_wine
       quantity: 3
       unit: tsp
     - name: garlic
@@ -2457,6 +2457,6 @@ sides:
     - side-dish
     - no subsequent occasions
     ingredients:
-    - name: new potatoes
+    - name: new_potato
       quantity: 1000
       unit: g

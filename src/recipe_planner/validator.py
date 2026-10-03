@@ -263,9 +263,7 @@ def validate_recipes(recipe_dict: dict) -> list:
     Returns a flat list of human-readable error strings, each prefixed with
     the recipe_id it relates to. An empty list means no issues were found.
     """
-    all_recipes = {}
-    for category, recipes in recipe_dict.items():
-        all_recipes.update(recipes)
+    all_recipes = flatten_recipes(recipe_dict)  # was the inline loop, now shared
 
     errors = []
     for recipe_id, recipe in all_recipes.items():
@@ -529,6 +527,157 @@ def validate_ingredients(ingredient_dict: dict) -> list:
     return errors
 
 
+# --- crossfile validation-----------------------------------------------
+
+
+def flatten_recipes(recipe_dict: dict) -> dict:
+    """Flatten a {category: {recipe_id: recipe}} structure into a single
+    {recipe_id: recipe} mapping, regardless of which category each recipe
+    lives under."""
+    all_recipes = {}
+    for category, recipes in recipe_dict.items():
+        if isinstance(recipes, dict):
+            all_recipes.update(recipes)
+    return all_recipes
+
+
+def find_ingredient_match(name: str, ingredient_dict: dict):
+    """
+    Attempt to resolve a recipe ingredient name against the ingredient
+    database. Returns a (match_type, ingredient_id) tuple:
+
+      - "exact"            : name matches an ingredient's key exactly -
+                              this is the only case that should pass silently
+      - "alias"             : name matches one of an ingredient's aliases
+      - "name_field"        : name matches an ingredient's human-readable
+                              'name' field, rather than its key
+      - "case_insensitive"  : name matches a key, alias, or name field, but
+                              only once case is ignored
+      - "not_found"         : no match of any kind was found
+
+    ingredient_id is None when match_type is "not_found". Matching is
+    case-sensitive except for the dedicated "case_insensitive" fallback,
+    which exists purely so a near-miss can be reported with a helpful
+    suggestion rather than a bare "not found".
+    """
+    if name in ingredient_dict:
+        return "exact", name
+
+    for ingredient_id, ingredient in ingredient_dict.items():
+        if not isinstance(ingredient, dict):
+            continue
+        if ingredient.get("name") == name:
+            return "name_field", ingredient_id
+        if name in (ingredient.get("aliases") or []):
+            return "alias", ingredient_id
+
+    lowered = name.lower()
+    for ingredient_id, ingredient in ingredient_dict.items():
+        if ingredient_id.lower() == lowered:
+            return "case_insensitive", ingredient_id
+        if not isinstance(ingredient, dict):
+            continue
+        if (ingredient.get("name") or "").lower() == lowered:
+            return "case_insensitive", ingredient_id
+        for alias in ingredient.get("aliases") or []:
+            if isinstance(alias, str) and alias.lower() == lowered:
+                return "case_insensitive", ingredient_id
+
+    return "not_found", None
+
+
+def validate_ingredient_cross_references(recipe_dict: dict, ingredient_dict: dict) -> list:
+    """
+    Cross-check every ingredient used across all recipes against the
+    ingredient database.
+
+    For each ingredient listed in a recipe:
+    1. Look it up via find_ingredient_match:
+       - "exact" is the only silent pass - the name matches an ingredient
+         key directly, as required.
+       - "alias" / "name_field" are reported (not silently accepted): the
+         ingredient exists in the database, but the recipe references it by
+         its alias or display name rather than its key. This is flagged
+         rather than auto-corrected, since rewriting recipes.yml risks
+         losing comments/formatting - the fix is a manual one-line edit.
+       - "case_insensitive" is reported the same way: a match exists but
+         only once case is ignored (e.g. recipe says 'Onion', database key
+         is 'onion') - flagged with a suggestion, not treated as a match.
+       - "not_found" is a hard error: no match of any kind exists.
+    2. Regardless of match type (as long as some match was found), checks
+       that the recipe ingredient's unit matches the database ingredient's
+       canonical_unit exactly. A mismatch is reported, since it would
+       otherwise silently break any future quantity/cost calculation that
+       assumes a recipe's unit and the ingredient's canonical_unit agree.
+
+    Returns a flat list of human-readable error strings, each prefixed with
+    the recipe_id it relates to. An empty list means every ingredient used
+    across every recipe exists in the ingredient database under its exact
+    key, with a matching unit.
+    """
+    errors = []
+    all_recipes = flatten_recipes(recipe_dict)
+
+    for recipe_id, recipe in all_recipes.items():
+        if not isinstance(recipe, dict):
+            continue
+        ingredients = recipe.get("ingredients")
+        if not isinstance(ingredients, list):
+            continue
+
+        recipe_errors = []
+        for index, ingredient in enumerate(ingredients):
+            if not isinstance(ingredient, dict):
+                continue
+            name = ingredient.get("name")
+            if not isinstance(name, str):
+                continue
+
+            ingredient_label = f"ingredients[{index}] ('{name}')"
+            match_type, ingredient_id = find_ingredient_match(name, ingredient_dict)
+
+            if match_type == "not_found":
+                recipe_errors.append(
+                    f"{ingredient_label}: not found in ingredient database "
+                    "(no matching key, name, or alias)"
+                )
+                continue
+
+            if match_type == "alias":
+                recipe_errors.append(
+                    f"{ingredient_label}: matches an alias of '{ingredient_id}' - "
+                    f"recipe should reference the ingredient key '{ingredient_id}' directly"
+                )
+            elif match_type == "name_field":
+                recipe_errors.append(
+                    f"{ingredient_label}: matches the display name of '{ingredient_id}' - "
+                    f"recipe should reference the ingredient key '{ingredient_id}' directly"
+                )
+            elif match_type == "case_insensitive":
+                recipe_errors.append(
+                    f"{ingredient_label}: only matches '{ingredient_id}' when case is ignored - "
+                    f"recipe should reference the exact ingredient key '{ingredient_id}'"
+                )
+
+            recipe_unit = ingredient.get("unit")
+            database_ingredient = ingredient_dict.get(ingredient_id)
+            if isinstance(database_ingredient, dict):
+                canonical_unit = database_ingredient.get("canonical_unit")
+                if (
+                    isinstance(recipe_unit, str)
+                    and isinstance(canonical_unit, str)
+                    and recipe_unit != canonical_unit
+                ):
+                    recipe_errors.append(
+                        f"{ingredient_label}: unit '{recipe_unit}' does not match "
+                        f"'{ingredient_id}'s canonical_unit '{canonical_unit}'"
+                    )
+
+        errors.extend(f"{recipe_id}: {error}" for error in recipe_errors)
+
+    return errors
+
+
 # --- orchestration -----------------------------------------------------
 
 
@@ -549,9 +698,11 @@ def main():
 
     recipe_errors = validate_recipes(recipe_dict)
     ingredient_errors = validate_ingredients(ingredient_dict)
+    cross_reference_errors = validate_ingredient_cross_references(recipe_dict, ingredient_dict)
 
     report("Recipes", recipe_errors)
     report("Ingredients", ingredient_errors)
+    report("Cross-file (recipes <-> ingredients)", cross_reference_errors)
 
 
 if __name__ == "__main__":
