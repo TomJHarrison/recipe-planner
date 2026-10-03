@@ -1,0 +1,43 @@
+[project]
+name = "recipe-planner"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tom Harrison", email = "harrisontom612@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[project.scripts]
+recipe-planner = "recipe_planner:main"
+
+[build-system]
+requires = ["uv_build>=0.12.22,<0.13.0"]
+build-backend = "uv_build"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes (unused imports/variables, undefined names, etc.)
+    "I",   # isort (import sorting)
+    "UP",  # pyupgrade (flags old-style syntax, suggests modern equivalents)
+]

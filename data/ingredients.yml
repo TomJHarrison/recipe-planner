@@ -1,0 +1,81 @@
+# ingredient_name:
+#   name: string
+#   aliases:
+#   - list of alternate names seen in recipes. # useful when we run a validator over any new recipe. we can have some code which automatically updates the ingredient name in the new recipe
+#   canonical_unit: g | ml | tsp | whole | can | bag
+#   purchase_options:
+#   - quantity: float
+#     cost: float
+#   - quantity: float
+#     cost: float
+#   shelf_life_days:             # omit a key entirely if that storage location is not viable
+#     fridge: int
+#     freezer: int
+#     pantry: int
+#   nutrition:
+#     # nutritional information is almost always listed per 100 grams or ml
+#     # rather than per canonical unit
+#     # if `unit` != `canonical_unit` then we will also specify the canonical unit in terms
+#     # of unit, for example, the weight of an onion in grams
+#     per: int
+#     unit: g                           # or ml
+#     amount_per_canonical_unit: 150    # how much one canonical_unit weighs/measures, in `unit` above.
+#     source: string                    # the site where this info came from
+#     calories: float
+#     # macros below measured in `unit`
+#     protein: float
+#     carbohydrates: float
+#     sugars: float
+#     fat: float
+#     saturated_fat: float
+#     fibre: float
+#   substitutes_with:  # a list of other ingredients that this one substitutes with (optional)
+#   - string
+#   - string
+chicken_thigh_fillets:
+  name: chicken thigh fillets
+  aliases:
+  - chicken thighs
+  canonical_unit: g
+  purchase_options:
+  - quantity: 600
+    cost: 4.50
+  - quantity: 1000
+    cost: 7.00
+  shelf_life_days:
+    fridge: 3
+    freezer: 270
+  nutrition:
+    per: 100
+    unit: g
+    source: MyFitnessPal
+    calories: 137
+    fat: 5
+    saturated_fat: 0.5
+    carbohydrates: 0
+    sugars: 0
+    fibre: 0
+    protein: 22
+  substitutes_with:
+  - chicken_breast_fillets
+onion:
+  name: onion
+  canonical_unit: whole
+  purchase_options:
+  - quantity: 1
+    cost: 0.20
+  shelf_life_days:
+    fridge: 20
+    pantry: 10
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 150
+    source: MyFitnessPal
+    calories: 39
+    fat: 0.1
+    saturated_fat: 0.1
+    carbohydrates: 9.1
+    sugars: 6.2
+    fibre: 1.1
+    protein: 1

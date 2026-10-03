@@ -1,0 +1,2462 @@
+main_dishes:
+  chicken_satay_curry:
+    name: Chicken Satay Curry
+    description: A Malaysian-style chicken curry with a peanut-based sauce
+    link: https://www.recipetineats.com/chicken-satay-curry/#wprm-recipe-container-21503
+    number_of_meals: 10
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 2
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - tasty
+    - curry
+    - rice-based
+    - chicken dish
+    - staple recipe
+    ingredients:
+    - name: coriander
+      quantity: 3
+      unit: tsp
+    - name: ground cumin
+      quantity: 3
+      unit: tsp
+    - name: turmeric
+      quantity: 3
+      unit: tsp
+    - name: paprika
+      quantity: 3
+      unit: tsp
+    - name: chilli powder
+      quantity: 2.5
+      unit: tsp
+    - name: curry powder
+      quantity: 7
+      unit: tsp
+    - name: salt
+      quantity: 2.5
+      unit: tsp
+    - name: white sugar
+      quantity: 4
+      unit: tsp
+    - name: chicken thigh fillets
+      quantity: 1500
+      unit: g
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: garlic
+      quantity: 8
+      unit: whole
+    - name: chicken stock cube
+      quantity: 1
+      unit: whole
+    - name: peanuts
+      quantity: 200
+      unit: g
+    - name: kecap manis
+      quantity: 4
+      unit: tsp
+    - name: dark soy sauce
+      quantity: 3
+      unit: tsp
+    - name: coconut milk
+      quantity: 2
+      unit: can
+    - name: peanut butter
+      quantity: 12
+      unit: tsp
+    - name: lime juice
+      quantity: 12
+      unit: tsp
+    - name: lemongrass
+      quantity: 1
+      unit: whole
+    - name: chillies
+      quantity: 2
+      unit: whole
+      optional: true
+    side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
+    - boiled_rice
+  smoked_paprika_cashew_chicken_curry:
+    name: Smoked Paprika Cashew Chicken curry
+    description: Chicken marinated in various spices including smoked paprika and served in a sauce with blended cashew nuts substituting for cream
+    link: https://www.allrecipes.com/recipe/270885/creamy-cashew-chicken-curry/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 2
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - tasty
+    - curry
+    - rice-based
+    - chicken dish
+    - staple recipe
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: ginger
+      quantity: 3
+      unit: tsp
+    - name: spring onions
+      quantity: 4
+      unit: whole
+    - name: fresh coriander
+      quantity: 0.5
+      unit: bag
+    - name: lime juice
+      quantity: 9
+      unit: tsp
+    - name: tomato puree
+      quantity: 6
+      unit: tsp
+    - name: chicken stock cube
+      quantity: 1
+      unit: whole
+    - name: paprika
+      quantity: 2
+      unit: tsp
+    - name: garam masala
+      quantity: 2
+      unit: tsp
+    - name: ground cumin
+      quantity: 1.5
+      unit: tsp
+    - name: ground coriander
+      quantity: 1
+      unit: tsp
+    - name: cayenne pepper
+      quantity: 0.5
+      unit: tsp
+    - name: ground turmeric
+      quantity: 0.5
+      unit: tsp
+    - name: cashew nuts
+      quantity: 200
+      unit: g
+    - name: garlic
+      quantity: 4
+      unit: whole
+    side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
+    - boiled_rice
+  chicken_pasta_bake:
+    name: Chicken pasta bake
+    description: Tomato-based pasta bake with chicken and spinach.
+    link: https://www.recipetineats.com/chicken-pasta-bake/#recipe
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 100
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - pasta-based
+    - pasta bake
+    - chicken dish
+    ingredients:
+    - name: streaky bacon
+      quantity: 150
+      unit: g
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: tomato passata
+      quantity: 1400
+      unit: g
+    - name: tomatoes
+      quantity: 6
+      unit: whole
+    - name: baby spinach
+      quantity: 100
+      unit: g
+    - name: pasta
+      quantity: 600
+      unit: g
+    - name: ball mozzarella
+      quantity: 1
+      unit: whole
+      optional: true
+    - name: parmesan
+      quantity: 100
+      unit: g
+      optional: true
+    - name: cheddar cheese
+      quantity: 300
+      unit: g
+    - name: tomato puree
+      quantity: 12
+      unit: tsp
+    - name: Italian herb mix
+      quantity: 4
+      unit: tsp
+    - name: garlic powder
+      quantity: 1
+      unit: tsp
+    - name: dried oregano
+      quantity: 3
+      unit: tsp
+    - name: chilli flakes
+      quantity: 1
+      unit: tsp
+      optional: true
+    - name: garlic
+      quantity: 4
+      unit: whole
+  golden_coconut_chicken_curry:
+    name: Golden coconut chicken curry
+    description: Chicken curry with coconut milk base.
+    link: https://www.recipetineats.com/golden-coconut-chicken-curry/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 2
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - rice-based
+    - curry
+    - chicken dish
+    ingredients:
+    - name: chicken thigh fillets
+      quantity: 1000
+      unit: g
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: ginger
+      quantity: 3
+      unit: tsp
+    - name: broccoli
+      quantity: 1
+      unit: whole
+    - name: fresh coriander
+      quantity: 0.5
+      unit: bag
+    - name: coconut milk
+      quantity: 2
+      unit: can
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: star anise
+      quantity: 3
+      unit: whole
+    - name: cinnamon stick
+      quantity: 1
+      unit: whole
+    - name: turmeric powder
+      quantity: 3
+      unit: tsp
+    - name: garam masala
+      quantity: 3
+      unit: tsp
+    - name: ground coriander
+      quantity: 3
+      unit: tsp
+    - name: ground cumin
+      quantity: 1
+      unit: tsp
+    - name: fennel powder
+      quantity: 1
+      unit: tsp
+      optional: true
+    - name: garlic
+      quantity: 2
+      unit: whole
+    side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
+    - boiled_rice
+  thai_red_curry:
+    name: Thai red curry
+    description: Thai red curry with chicken. Very spicy. Three heaped tablespoons of curry paste makes double the recipe.
+    link: https://www.recipetineats.com/thai-red-curry-with-chicken/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 2
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - curry
+    - rice-based
+    - spicy
+    - healthy
+    - chicken dish
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: sweet potato
+      quantity: 1
+      unit: whole
+    - name: green beans
+      quantity: 200
+      unit: g
+    - name: coconut milk
+      quantity: 2
+      unit: can
+    - name: chicken stock cube
+      quantity: 1
+      unit: whole
+    - name: Thai Red Curry Paste
+      quantity: 9
+      unit: tsp
+    - name: lemongrass
+      quantity: 1
+      unit: whole
+    - name: fish sauce
+      quantity: 4
+      unit: tsp
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: sugar
+      quantity: 6
+      unit: tsp
+    side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
+    - boiled_rice
+  chicken_chasseur:
+    name: Chicken chasseur
+    description: Chicken thighs in a tomato and mushroom sauce with herbs. A French classic. Serve with mashed potato.
+    link: https://www.recipetineats.com/chicken-chasseur/
+    number_of_meals: 5
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 2
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - chicken dish
+    - French
+    ingredients:
+    - name: bone-in chicken thighs
+      quantity: 1000
+      unit: g
+    - name: unsalted butter
+      quantity: 60
+      unit: g
+    - name: mushrooms
+      quantity: 400
+      unit: g
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: garlic
+      quantity: 3
+      unit: whole
+    - name: tomato puree
+      quantity: 9
+      unit: tsp
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: dried tarragon
+      quantity: 1
+      unit: tsp
+    side_dishes:  # a list of side dishes that could pair with the dish. only one of these should be chosen. any options specified should correspond to another recipe in this file
+    - mashed_potatoes
+    - boiled_rice
+  chicken_shawarma:
+    name: Chicken shawarma
+    description: Middle eastern style chicken in wraps.
+    link: https://www.recipetineats.com/chicken-sharwama-middle-eastern/
+    number_of_meals: 4
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 30
+        total_minutes: 45
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - tasty
+    - eat at home
+    - chicken dish
+    - Middle Eastern
+    - wraps
+    ingredients:
+    - name: chicken thighs
+      quantity: 600
+      unit: g
+    - name: flatbreads
+      quantity: 4
+      unit: whole
+    - name: ground coriander
+      quantity: 2
+      unit: tsp
+    - name: ground cumin
+      quantity: 2
+      unit: tsp
+    - name: ground cardamom
+      quantity: 2
+      unit: tsp
+    - name: ground cayenne pepper
+      quantity: 0.5
+      unit: tsp
+    - name: smoked paprika
+      quantity: 2
+      unit: tsp
+    - name: lemon juice
+      quantity: 6
+      unit: tsp
+    - name: olive oil
+      quantity: 9
+      unit: tsp
+    - name: garlic
+      quantity: 2
+      unit: whole
+    - name: greek yoghurt
+      quantity: 200
+      unit: g
+    - name: lettuce
+      quantity: 50
+      unit: g
+    - name: red onion
+      quantity: 0.25
+      unit: whole
+    - name: Cheese
+      quantity: 25
+      unit: g
+      optional: true
+    side_dishes:
+    - potato_salad
+    - sauteed_potatoes
+  chicken_stroganoff:
+    name: Gordon Ramsay's chicken stroganoff
+    description: A healthy variation on beef stroganoff with chicken substituting for beef.
+    link: https://www.food.com/recipe/smoked-paprika-chicken-stroganoff-gordon-ramsay-388207
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 30
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 20
+        total_minutes: 20
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - healthy
+    - chicken dish
+    - rice-based
+    ingredients:
+    - name: chicken breast
+      quantity: 600
+      unit: g
+    - name: smoked paprika
+      quantity: 3
+      unit: tsp
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: green peppers
+      quantity: 2
+      unit: whole
+    - name: mushrooms
+      quantity: 300
+      unit: g
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: soured cream
+      quantity: 150
+      unit: ml
+    - name: sugar snap peas
+      quantity: 300
+      unit: g
+    side_dishes:
+    - boiled_rice
+  spanish_style_chicken:
+    name: Spanish style chicken
+    description: A tray bake of chicken thighs with chorizo, peppers and potatoes.
+    link: https://www.hairybikers.com/recipes/view/spanish-style-chicken-bake
+    number_of_meals: 5
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 5
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - healthy
+    - Spanish
+    - chicken dish
+    ingredients:
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: red onion
+      quantity: 1
+      unit: whole
+    - name: new potatoes
+      quantity: 500
+      unit: g
+    - name: garlic
+      quantity: 8
+      unit: whole
+    - name: medium tomatoes
+      quantity: 8
+      unit: whole
+    - name: chorizo
+      quantity: 200
+      unit: g
+    - name: bone-in chicken thighs
+      quantity: 1000
+      unit: g
+    - name: smoked paprika
+      quantity: 0.5
+      unit: tsp
+    - name: oregano
+      quantity: 0.5
+      unit: tsp
+    - name: green pepper
+      quantity: 1
+      unit: whole
+  ping_gai_chicken:
+    name: Ping Gai Chicken
+    description: A Laotian-style grilled chicken marinated in black pepper, fresh coriander, and oyster, fish, and soy sauces.
+    link: https://www.allrecipes.com/recipe/274634/laotian-grilled-chicken-ping-gai/
+    number_of_meals: 5
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - tasty
+    - staple recipe
+    - chicken dish
+    - rice-based
+    ingredients:
+    - name: chicken thigh fillets
+      quantity: 1000
+      unit: g
+    - name: whole black peppercorns
+      quantity: 3
+      unit: tsp
+    - name: fresh coriander
+      quantity: 0.5
+      unit: bag
+    - name: oyster sauce
+      quantity: 9
+      unit: tsp
+    - name: soy sauce
+      quantity: 6
+      unit: tsp
+    - name: fish sauce
+      quantity: 6
+      unit: tsp
+    - name: cayenne pepper
+      quantity: 0.5
+      unit: tsp
+    side_dishes:
+    - boiled_rice
+    - fried_rice
+  nandos_style_chicken:
+    name: Nandos style chicken
+    description: Copy-cat of Nandos chicken burger with peri-peri sauce.
+    link: https://www.recipetineats.com/nandos-portuguese-peri-peri-chicken-burger/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - tasty
+    - eat at home
+    - chicken dish
+    - chicken burger
+    - staple recipe
+    ingredients:
+    - name: chicken breast fillets
+      quantity: 1000
+      unit: g
+    - name: red chilli
+      quantity: 1
+      unit: whole
+    - name: red pepper
+      quantity: 1
+      unit: whole
+    - name: soured cream
+      quantity: 150
+      unit: g
+    - name: mayonnaise
+      quantity: 300
+      unit: ml
+    - name: malt vinegar
+      quantity: 60
+      unit: ml
+    - name: smoked paprika
+      quantity: 6
+      unit: tsp
+    - name: dried oregano
+      quantity: 3
+      unit: tsp
+    - name: onion powder
+      quantity: 2
+      unit: tsp
+    - name: garlic
+      quantity: 5
+      unit: whole
+    - name: burger buns
+      quantity: 6
+      unit: whole
+    - name: red onion
+      quantity: 1
+      unit: whole
+    - name: lettuce
+      quantity: 50
+      unit: g
+    - name: tomatoes
+      quantity: 30
+      unit: g
+    side_dishes:
+    - potato_salad
+    - sauteed_potatoes
+  chicken_dijonnaise:
+    name: Chicken dijonnaise
+    description: French chicken recipe with a mushroom and mustard sauce. Serve with mashed potato.
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 15
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - French
+    - tasty
+    - chicken dish
+    ingredients:
+    - name: chicken breast
+      quantity: 600
+      unit: g
+    - name: dijon mustard
+      quantity: 4
+      unit: tsp
+    - name: mushrooms
+      quantity: 200
+      unit: g
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: dried tarragon
+      quantity: 2
+      unit: tsp
+    - name: single cream
+      quantity: 100
+      unit: ml
+      optional: true
+    side_dishes:
+    - mashed_potatoes
+  hokkien_chicken_noodles:
+    name: Hokkien chicken noodles
+    description: Chicken stir-fried with Hokkien noodles, vegetables, and a savory sauce.
+    link: https://www.recipetineats.com/hokkien-noodles/#recipe
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 15
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - eat at home
+    - tasty
+    - stir-fry
+    - chicken stir fry
+    - quick and easy
+    ingredients:
+    - name: udon noodles
+      quantity: 1000
+      unit: g
+    - name: chicken thighs
+      quantity: 600
+      unit: g
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: spring onions
+      quantity: 1
+      unit: whole
+    - name: red peppers
+      quantity: 2
+      unit: whole
+    - name: green cabbage
+      quantity: 1
+      unit: whole
+    - name: light soy sauce
+      quantity: 6
+      unit: tsp
+    - name: dark soy sauce
+      quantity: 5
+      unit: tsp
+    - name: oyster sauce
+      quantity: 6
+      unit: tsp
+    - name: Chinese cooking wine
+      quantity: 3
+      unit: tsp
+    - name: sesame oil
+      quantity: 3
+      unit: tsp
+  chicken_gyros:
+    name: Chicken gyros
+    description: Greek grilled chicken served in wraps.
+    link: https://www.recipetineats.com/kalimeras-famous-chicken-gyros/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - tasty
+    - eat at home
+    - chicken dish
+    - Greek
+    - wraps
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: paprika
+      quantity: 6
+      unit: tsp
+    - name: dijon mustard
+      quantity: 3
+      unit: tsp
+    - name: dried oregano
+      quantity: 3
+      unit: tsp
+    - name: curry powder
+      quantity: 1.5
+      unit: tsp
+    - name: greek yoghurt
+      quantity: 250
+      unit: g
+    - name: mayonnaise
+      quantity: 50
+      unit: g
+    - name: olive oil
+      quantity: 50
+      unit: ml
+    - name: American mustard
+      quantity: 6
+      unit: tsp
+    - name: garlic powder
+      quantity: 2
+      unit: tsp
+    - name: lettuce
+      quantity: 50
+      unit: g
+    - name: red onion
+      quantity: 0.25
+      unit: whole
+    - name: tomatoes
+      quantity: 30
+      unit: g
+    - name: flatbreads
+      quantity: 6
+      unit: whole
+    - name: cheese
+      quantity: 25
+      unit: g
+      optional: true
+    side_dishes:
+    - potato_salad
+    - sauteed_potatoes
+  new_orleans_chicken_wings:
+    name: New Orleans chicken wings
+    description: Chicken wings marinated in a spicy New Orleans-style sauce and baked until crispy.
+    link: https://www.recipetineats.com/new-orleans-chicken-wings/
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 75
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - oven required
+    - eat at home
+    - chicken wings
+    ingredients:
+    - name: chicken wings
+      quantity: 1000
+      unit: g
+    - name: fresh coriander
+      quantity: 0.5
+      unit: bag
+    - name: dried thyme
+      quantity: 0.5
+      unit: tsp
+    - name: butter
+      quantity: 50
+      unit: g
+    - name: brown sugar
+      quantity: 5
+      unit: tsp
+    - name: paprika
+      quantity: 2.5
+      unit: tsp
+    - name: garlic powder
+      quantity: 1
+      unit: tsp
+    - name: onion powder
+      quantity: 1
+      unit: tsp
+    - name: dried oregano
+      quantity: 0.5
+      unit: tsp
+    - name: cayenne pepper
+      quantity: 0.25
+      unit: tsp
+    - name: garlic
+      quantity: 2
+      unit: whole
+    side_dishes:
+    - sauteed_potatoes
+    - potato_salad
+    - potato_wedges
+  chicken_and_leek_pie:
+    name: Chicken and leek pie
+    description: A classic British pie filled with chicken and leeks.
+    link: https://www.recipetineats.com/chicken-and-leek-pie/#recipe
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - chicken dish
+    - pie
+    - British
+    ingredients:
+    - name: streaky bacon
+      quantity: 150
+      unit: g
+    - name: chicken thigh fillets
+      quantity: 1000
+      unit: g
+    - name: leeks
+      quantity: 2
+      unit: whole
+    - name: celery
+      quantity: 4
+      unit: whole
+    - name: dried thyme
+      quantity: 0.5
+      unit: tsp
+    - name: double cream
+      quantity: 300
+      unit: ml
+    - name: chicken stock cube
+      quantity: 1
+      unit: whole
+    - name: dijon mustard
+      quantity: 3
+      unit: tsp
+    - name: garlic
+      quantity: 2
+      unit: whole
+    side_dishes:
+    - mashed_potatoes
+  fried_chicken:
+    name: Fried chicken
+    description: Copy-cat of KFC fried chicken.
+    link: https://www.recipetineats.com/fried-chicken/
+    number_of_meals: 5
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 90
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 30
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - eat at home
+    - unhealthy
+    - treat
+    - good for groups
+    - copy-cat
+    - chicken dish
+    ingredients:
+    - name: bone-in chicken thighs
+      quantity: 2000
+      unit: g
+    - name: dried thyme
+      quantity: 1.5
+      unit: tsp
+    - name: egg
+      quantity: 1
+      unit: whole
+    - name: milk
+      quantity: 250
+      unit: ml
+    - name: white wine vinegar
+      quantity: 3
+      unit: tsp
+    - name: plain flour
+      quantity: 365
+      unit: g
+    - name: cornflour
+      quantity: 115
+      unit: g
+    - name: celery salt
+      quantity: 0.75
+      unit: tsp
+    - name: sweet paprika
+      quantity: 1.5
+      unit: tsp
+    - name: cayenne pepper
+      quantity: 0.5
+      unit: tsp
+    - name: onion powder
+      quantity: 1.5
+      unit: tsp
+    - name: garlic powder
+      quantity: 3
+      unit: tsp
+    - name: mustard powder
+      quantity: 1
+      unit: tsp
+    - name: ginger powder
+      quantity: 0.75
+      unit: tsp
+    - name: dried oregano
+      quantity: 1.5
+      unit: tsp
+    - name: salt
+      quantity: 3
+      unit: tsp
+    - name: black pepper
+      quantity: 4.5
+      unit: tsp
+    side_dishes:
+    - potato_wedges
+  kuku_paka:
+    name: Kuku Paka
+    description: An Afrian-style chicken curry.
+    link: https://www.recipetineats.com/african-chicken-curry-kuku-paka/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - chicken dish
+    - curry
+    - rice-based
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: onions
+      quantity: 2
+      unit: whole
+    - name: ginger
+      quantity: 3
+      unit: tsp
+    - name: chopped tomatoes
+      quantity: 2
+      unit: can
+    - name: fresh coriander
+      quantity: 0.5
+      unit: bag
+    - name: coconut milk
+      quantity: 2
+      unit: can
+    - name: ground coriander
+      quantity: 6
+      unit: tsp
+    - name: ground cumin
+      quantity: 3
+      unit: tsp
+    - name: turmeric powder
+      quantity: 3
+      unit: tsp
+    - name: chilli powder
+      quantity: 2
+      unit: tsp
+    - name: lemon juice
+      quantity: 12
+      unit: tsp
+    - name: garlic
+      quantity: 3
+      unit: whole
+    side_dishes:
+    - boiled_rice
+  chicken_fried_rice:
+    name: Chicken fried rice
+    description: Quick chicken fried rice with vegetables and soy sauce.
+    link: https://www.recipetineats.com/chicken-fried-rice/#recipe
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 5
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - eat at work
+    - batch cooking
+    - quick dinner
+    ingredients:
+    - name: smoked gammon
+      quantity: 300
+      unit: g
+      optional: true
+    - name: chicken breast
+      quantity: 600
+      unit: g
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: carrot
+      quantity: 1
+      unit: whole
+    - name: spring onion
+      quantity: 4
+      unit: whole
+    - name: white rice
+      quantity: 400
+      unit: g
+    - name: eggs
+      quantity: 4
+      unit: whole
+    - name: frozen peas
+      quantity: 100
+      unit: g
+    - name: oyster sauce
+      quantity: 6
+      unit: tsp
+    - name: light soy sauce
+      quantity: 18
+      unit: tsp
+    - name: sesame oil
+      quantity: 1
+      unit: tsp
+    - name: Chinese cooking wine or Mirin
+      quantity: 7.5
+      unit: tsp
+    - name: garlic
+      quantity: 4
+      unit: whole
+  gai_yang_chicken:
+    name: Gai Yang Chicken
+    description: Thai-style grilled chicken marinated in lemongrass, garlic, and fish sauce.
+    link: https://www.recipetineats.com/thai-grilled-chicken-gai-yang/
+    number_of_meals: 5
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - chicken dish
+    - grilled chicken
+    - Thai
+    - rice-based
+    - healthy
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: lemongrass
+      quantity: 1
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: fish sauce
+      quantity: 7.5
+      unit: tsp
+    - name: light soy sauce
+      quantity: 3
+      unit: tsp
+    - name: dark soy sauce
+      quantity: 2
+      unit: tsp
+    - name: brown sugar
+      quantity: 9
+      unit: tsp
+    - name: sweet chilli sauce
+      quantity: 9
+      unit: tsp
+    side_dishes:
+    - boiled_rice
+    - fried_rice
+  tuscan_chicken_stew:
+    name: Tuscan chicken stew
+    description: A chicken stew with tomatoes, butter beans, and spinach.
+    link: https://www.recipetineats.com/tuscan-chicken-stew/#recipe
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - chicken dish
+    - Italian
+    - stew
+    - pasta-based
+    ingredients:
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: Italian herb mix
+      quantity: 2
+      unit: tsp
+    - name: garlic powder
+      quantity: 1
+      unit: tsp
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: red pepper
+      quantity: 1
+      unit: whole
+      optional: true
+    - name: leek
+      quantity: 2
+      unit: whole
+      optional: true
+    - name: garlic
+      quantity: 3
+      unit: whole
+    - name: sundried tomatoes
+      quantity: 100
+      unit: g
+      optional: true
+    - name: cherry tomatoes
+      quantity: 200
+      unit: g
+    - name: butter beans
+      quantity: 2
+      unit: can
+    - name: plain flour
+      quantity: 50
+      unit: g
+    - name: chicken stock cube
+      quantity: 2
+      unit: whole
+    - name: single cream
+      quantity: 250
+      unit: ml
+    - name: cheddar
+      quantity: 100
+      unit: g
+    - name: spinach
+      quantity: 200
+      unit: g
+    side_dishes:
+    - pasta
+  red_lentil_ragu:
+    name: Red lentil ragu
+    description: Nutritious red lentil ragu served on pasta.
+    link: https://realfood.tesco.com/recipes/lentil-ragu-with-spaghetti.html
+    number_of_meals: 4
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 30
+        total_minutes: 40
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - healthy
+    - vegetarian
+    - low-protein
+    ingredients:
+    - name: red onions
+      quantity: 2
+      unit: whole
+    - name: carrots
+      quantity: 300
+      unit: g
+    - name: garlic
+      quantity: 3
+      unit: whole
+    - name: red lentils
+      quantity: 225
+      unit: g
+    - name: chopped tomatoes
+      quantity: 1
+      unit: can
+    - name: chicken stock cube
+      quantity: 3
+      unit: whole
+    - name: spaghetti
+      quantity: 350
+      unit: g
+    - name: fresh basil
+      quantity: 0.5
+      unit: bag
+      optional: true
+    - name: spinach
+      quantity: 100
+      unit: g
+    side_dishes:
+    - pasta
+  beef_chilli:
+    name: Chilli con carne with beef mince
+    description: Chilli con carne with beef mince and red kidney beans.
+    link: https://www.hairybikers.com/recipes/view/chilli-con-carne
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - red meat
+    - rice-based
+    - tasty
+    - staple recipe
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 3
+      unit: whole
+    - name: garlic
+      quantity: 3
+      unit: whole
+    - name: chilli powder
+      quantity: 2
+      unit: tsp
+    - name: ground cumin
+      quantity: 4
+      unit: tsp
+    - name: ground coriander
+      quantity: 4
+      unit: tsp
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: chopped tomatoes
+      quantity: 2
+      unit: can
+    - name: red kidney beans
+      quantity: 2
+      unit: can
+    - name: tomato puree
+      quantity: 9
+      unit: tsp
+    - name: dried oregano
+      quantity: 1
+      unit: tsp
+      optional: true
+  bolognese:
+    name: Bolognese
+    description: Italian bolognese with beef mince and tomato sauce
+    link: ''
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 120
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - pasta dish
+    - red meat
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 3
+      unit: whole
+    - name: celery
+      quantity: 4
+      unit: whole
+    - name: carrot
+      quantity: 3
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: bacon
+      quantity: 200
+      unit: g
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: chopped tomatoes
+      quantity: 1
+      unit: can
+    - name: tomato puree
+      quantity: 6
+      unit: tsp
+    - name: parmesan cheese
+      quantity: 100
+      unit: g
+    side_dishes:
+    - pasta
+  cottage_pie:
+    name: Cottage pie
+    description: Gary Rhodes cottage pie recipe (picture on phone).
+    link: ''
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 180
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - red meat
+    - oven required
+    - more expensive
+    - treat
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 3
+      unit: whole
+    - name: celery
+      quantity: 4
+      unit: whole
+    - name: carrot
+      quantity: 3
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: ground cinnamon
+      quantity: 0.5
+      unit: tsp
+    - name: dried thyme
+      quantity: 0.5
+      unit: tsp
+    - name: dried rosemary
+      quantity: 0.5
+      unit: tsp
+    - name: tomato puree
+      quantity: 6
+      unit: tsp
+    - name: red wine
+      quantity: 750
+      unit: ml
+    - name: chicken stock cubes
+      quantity: 1
+      unit: whole
+    - name: fresh thyme
+      quantity: 0.5
+      unit: bag
+      optional: true
+    - name: fresh rosemary
+      quantity: 0.5
+      unit: bag
+      optional: true
+  lasagna:
+    name: Lasagna
+    description: A beef lasagna.
+    link: https://www.recipetineats.com/lasagna/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 180
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - tasty
+    - more effort
+    - red meat
+    - Italian
+    - pasta dish
+    - oven required
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 3
+      unit: whole
+    - name: celery
+      quantity: 4
+      unit: whole
+    - name: carrot
+      quantity: 3
+      unit: whole
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: bacon
+      quantity: 200
+      unit: g
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: chopped tomatoes
+      quantity: 1
+      unit: can
+    - name: tomato puree
+      quantity: 6
+      unit: tsp
+    - name: parmesan cheese
+      quantity: 100
+      unit: g
+    - name: lasagna sheets
+      quantity: 500
+      unit: g
+    - name: flour
+      quantity: 100
+      unit: g
+    - name: butter
+      quantity: 100
+      unit: g
+    - name: milk
+      quantity: 1500
+      unit: ml
+  burgers:
+    name: Beef burgers.
+    description: Classic beef burger
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - unhealthy
+    - red meat
+    - tasty
+    - quick and easy
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: red onion
+      quantity: 1
+      unit: whole
+    - name: burger buns
+      quantity: 4
+      unit: whole
+    - name: tomato ketchup
+      quantity: 100
+      unit: ml
+    - name: mayonnaise
+      quantity: 100
+      unit: ml
+    - name: american mustard
+      quantity: 6
+      unit: tsp
+    - name: lettuce
+      quantity: 200
+      unit: g
+    - name: gherkins
+      quantity: 4
+      unit: whole
+    - name: cheese slices
+      quantity: 8
+      unit: whole
+    - name: bacon
+      quantity: 150
+      unit: g
+    side_dishes:
+    - potato_wedges
+    - potato_salad
+    - sauteed_potatoes
+  swedish_meatballs:
+    name: Swedish meatballs
+    description: A Swedish meatball recipe. Served with mashed potato.
+    link: https://www.recipetineats.com/swedish-meatballs/#wprm-recipe-container-20596
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 90
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - more effort
+    - tasty
+    - rarely cooked
+    - adventurous
+    - red meat
+    ingredients:
+    - name: beef mince
+      quantity: 500
+      unit: g
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: bread
+      quantity: 4  # means 4 slices
+      unit: whole
+    - name: egg
+      quantity: 2
+      unit: whole
+    - name: unsalted butter
+      quantity: 60
+      unit: g
+    - name: single cream
+      quantity: 180
+      unit: ml
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: plain flour
+      quantity: 45
+      unit: g
+    - name: oil
+      quantity: 3
+      unit: tsp
+    - name: ground nutmeg
+      quantity: 0.5
+      unit: tsp
+    - name: allspice powder
+      quantity: 0.5
+      unit: tsp
+    side_dishes:
+    - mashed_potatoes
+  mexican_chipotle_pork_and_beans:
+    name: Mexican chipotle pork and beans
+    description: Slow-cooked Mexican-style pork with chipotle peppers and beans.
+    link: https://www.recipetineats.com/mexican-chipotle-pork-beans/
+    number_of_meals: 10
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 45
+        total_minutes: 600
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 5
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - eat at work
+    - batch cooking
+    - eat at home
+    - unhealthy
+    ingredients:
+    - name: pork shoulder
+      quantity: 2000
+      unit: g
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: butter beans
+      quantity: 4
+      unit: can
+    - name: chipotle paste. # TODO: decide whether to just show as 1 can
+      quantity: 90
+      unit: g
+    - name: tomato puree
+      quantity: 12
+      unit: tsp
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: ground cumin
+      quantity: 4.5
+      unit: tsp
+    - name: dried oregano
+      quantity: 4.5
+      unit: tsp
+    - name: ground coriander
+      quantity: 1.5
+      unit: tsp
+    - name: allspice powder
+      quantity: 0.5
+      unit: tsp
+    - name: orange juice
+      quantity: 300
+      unit: ml
+    - name: garlic
+      quantity: 4
+      unit: whole
+    side_dishes:
+    - boiled_rice
+  baked_salmon_with_asparagus_and_tomatoes:
+    name: Baked salmon with asparagus and tomatoes
+    description: Oven-baked salmon fillet with asparagus and cherry tomatoes.
+    link: https://www.recipetineats.com/lemon-garlic-salmon-tray-bake-easy-healthy/
+    number_of_meals: 4
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 30
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - healthy
+    - fish dish
+    - eat at home
+    - expensive
+    ingredients:
+    - name: salmon fillets
+      quantity: 500
+      unit: g
+    - name: asparagus
+      quantity: 12
+      unit: whole
+    - name: cherry tomatoes
+      quantity: 200
+      unit: g
+    - name: lemon
+      quantity: 1
+      unit: whole
+    - name: dijon mustard
+      quantity: 1
+      unit: tsp
+    - name: extra-virgin olive oil
+      quantity: 6
+      unit: tsp
+    - name: garlic
+      quantity: 2
+      unit: whole
+    side_dishes:
+    - ratatouille
+    - boiled_potatoes
+  pasta_amatriciana:
+    name: Pasta amatriciana
+    description: A classic Roman pasta dish with tomatoes, guanciale, and pecorino cheese.
+    link: https://www.greatbritishchefs.com/recipes/pasta-amatriciana-recipe
+    number_of_meals: 2
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 20
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 20
+        total_minutes: 30
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - low protein
+    - quick dinner
+    ingredients:
+    - name: pasta
+      quantity: 250
+      unit: g
+    - name: pancetta
+      quantity: 200
+      unit: g
+    - name: red chilli
+      quantity: 1
+      unit: whole
+      optional: true
+    - name: passata
+      quantity: 400
+      unit: g
+    - name: parmesan
+      quantity: 75
+      unit: g
+    - name: cherry tomatoes
+      quantity: 100
+      unit: g
+    - name: parsley
+      quantity: 0.5
+      unit: bag
+      optional: true
+  bacon_chicken_and_leek_pasta_bake:
+    name: Bacon, chicken and leek pasta bake
+    description: Pasta bake with chicken, bacon, leeks and a creamy cheese sauce.
+    link: ''
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 90
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - simple
+    - pasta dish
+    - chicken dish
+    - oven required
+    ingredients:
+    - name: streaky bacon
+      quantity: 150
+      unit: g
+    - name: chicken thighs
+      quantity: 1000
+      unit: g
+    - name: leek
+      quantity: 2
+      unit: whole
+    - name: pasta
+      quantity: 600
+      unit: g
+    - name: cheddar cheese
+      quantity: 400
+      unit: g
+    - name: garlic
+      quantity: 4
+      unit: whole
+    - name: milk
+      quantity: 1500
+      unit: ml
+    - name: plain flour
+      quantity: 100
+      unit: g
+    - name: butter
+      quantity: 100
+      unit: g
+  macaroni_cheese:
+    name: Macaroni cheese
+    description: Classic mac n cheese.
+    link: https://www.recipetineats.com/baked-mac-and-cheese/
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 40
+        total_minutes: 90
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - unhealthy
+    - low protein
+    - side dish
+    ingredients:
+    - name: macaroni
+      quantity: 375
+      unit: g
+    - name: cheddar cheese
+      quantity: 300
+      unit: g
+    - name: mozzarella cheese
+      quantity: 150
+      unit: g
+    - name: butter
+      quantity: 160
+      unit: g
+    - name: milk
+      quantity: 1100
+      unit: ml
+    - name: plain flour
+      quantity: 90
+      unit: g
+    - name: garlic powder
+      quantity: 1.5
+      unit: tsp
+    - name: onion powder
+      quantity: 0.75
+      unit: tsp
+    - name: mustard powder
+      quantity: 0.75
+      unit: tsp
+  pork_meatballs:
+    name: Pork meatballs
+    description: Pork meatballs with a fennel flavour.
+    link: https://www.greatbritishchefs.com/recipes/pork-meatball-recipe
+    number_of_meals: 4
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 90
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - adventurous
+    - more effort
+    - tasty
+    - pork dish
+    - Italian
+    ingredients:
+    - name: pork mince
+      quantity: 500
+      unit: g
+    - name: bread
+      quantity: 4  # means 4 slices
+      unit: whole
+    - name: smoked bacon
+      quantity: 100
+      unit: g
+    - name: Dijon mustard
+      quantity: 1
+      unit: tsp
+    - name: egg
+      quantity: 1
+      unit: whole
+    - name: red onion
+      quantity: 1
+      unit: whole
+    - name: fresh sage
+      quantity: 0.5
+      unit: bag
+    - name: fennel seeds
+      quantity: 0.5
+      unit: tsp
+    - name: fennel bulb
+      quantity: 1
+      unit: whole
+    - name: garlic
+      quantity: 2
+      unit: whole
+    - name: white wine
+      quantity: 100
+      unit: ml
+      optional: true
+    - name: chopped tomatoes
+      quantity: 1
+      unit: can
+    - name: Parmesan
+      quantity: 50
+      unit: g
+    side_dishes:
+    - pasta
+  pesto_chicken_pasta:
+    name: Pesto chicken pasta
+    description: Chicken fillets in a creamy pesto sauce served with pasta.
+    link: ''
+    number_of_meals: 2
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 20
+      subsequent_occasions:
+        active_minutes: 15
+        total_minutes: 20
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - quick dinner
+    - chicken dish
+    - cheap
+    ingredients:
+    - name: chicken breast
+      quantity: 150
+      unit: g
+    - name: pesto
+      quantity: 1
+      unit: can
+    side_dishes:
+    - pasta
+  sausage_ragu:
+    name: Sausage ragu
+    description: Italian ragu made with herby sausages, served with pasta.
+    link: https://www.recipetineats.com/sausage-ragu/#recipe
+    number_of_meals: 6
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 45
+        total_minutes: 120
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 15
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - tasty
+    - treat
+    ingredients:
+    - name: pork sausages
+      quantity: 500
+      unit: g
+    - name: beef sausages
+      quantity: 500
+      unit: g
+    - name: onion
+      quantity: 2
+      unit: whole
+    - name: carrot
+      quantity: 2
+      unit: whole
+    - name: celery
+      quantity: 3
+      unit: whole
+    - name: chopped tomatoes
+      quantity: 1
+      unit: can
+    - name: dried thyme
+      quantity: 0.5
+      unit: tsp
+    - name: chilli flakes
+      quantity: 0.25
+      unit: tsp
+      optional: true
+    - name: tomato puree
+      quantity: 6
+      unit: tsp
+    - name: chicken stock cubes
+      quantity: 2
+      unit: whole
+    - name: star anise
+      quantity: 1
+      unit: whole
+    - name: pinot noir red wine
+      quantity: 250
+      unit: ml
+      optional: true
+    - name: garlic
+      quantity: 3
+      unit: whole
+    side_dishes:
+    - pasta
+  asparagus_risotto:
+    name: Asparagus risotto
+    description: Risotto with asparagus and parmesan cheese.
+    link: https://www.greatbritishchefs.com/recipes/asparagus-risotto-recipe
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 10
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - unhealthy
+    - dinner party
+    - treat
+    - vegetarian
+    - more effort
+    - spring season
+    ingredients:
+    - name: asparagus
+      quantity: 750
+      unit: g
+    - name: bicarbonate of soda
+      quantity: 0.25
+      unit: tsp
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: garlic
+      quantity: 3
+      unit: whole
+    - name: risotto rice
+      quantity: 300
+      unit: g
+    - name: white wine
+      quantity: 200
+      unit: ml
+    - name: butter
+      quantity: 100
+      unit: g
+    - name: parmesan
+      quantity: 50
+      unit: g
+    - name: lemon
+      quantity: 1
+      unit: whole
+    - name: chicken stock cubes
+      quantity: 4
+      unit: whole
+  pea_and_pancetta_risotto:
+    name: Pea and pancetta risotti
+    description: Risotto with peas, pancetta, and parmesan cheese.
+    link: https://www.greatbritishchefs.com/recipes/pea-pancetta-risotto-recipe
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 60
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 10
+    eat_at_work: false
+    unhealthy: true
+    tags:
+    - unhealthy
+    - dinner party
+    - treat
+    ingredients:
+    - name: risotto rice
+      quantity: 300
+      unit: g
+    - name: chicken stock cubes
+      quantity: 4
+      unit: whole
+    - name: garlic
+      quantity: 2
+      unit: whole
+    - name: onion
+      quantity: 1
+      unit: whole
+    - name: white wine
+      quantity: 150
+      unit: ml
+    - name: pancetta
+      quantity: 100
+      unit: g
+    - name: mushrooms
+      quantity: 250
+      unit: g
+    - name: mascarpone
+      quantity: 50
+      unit: g
+    - name: Parmesan
+      quantity: 75
+      unit: g
+    - name: butter
+      quantity: 30
+      unit: g
+    - name: frozen peas
+      quantity: 50
+      unit: g
+    - name: parsley
+      quantity: 0.5
+      unit: bag
+sides:
+  potato_salad:
+    name: Potato salad
+    description: Potato salad with greek yoghurt, mustard, spring onions, and gherkins
+    link: ''
+    number_of_meals: 5
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 45
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 5
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - healthy
+    - easy
+    - quick
+    ingredients:
+    - name: new potatoes
+      quantity: 1000
+      unit: g
+    - name: mayonnaise
+      quantity: 6
+      unit: tsp
+    - name: Greek yoghurt
+      quantity: 6
+      unit: tsp
+    - name: spring onions
+      quantity: 3
+      unit: whole
+    - name: gherkins
+      quantity: 4
+      unit: whole
+    - name: Dijon mustard
+      quantity: 1
+      unit: tsp
+  boiled_rice:
+    name: Boiled rice
+    description: Boiled rice
+    link: ''
+    number_of_meals: 1
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 1
+        total_minutes: 15
+      subsequent_occasions:
+        active_minutes: 0
+        total_minutes: 0
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - side-dish
+    - no subsequent occasions
+    ingredients:
+    - name: white rice
+      quantity: 100
+      unit: g
+  ratatouille:
+    name: Ratatouille
+    description: French vegetable stew.
+    link: https://www.recipetineats.com/ratatouille/
+    number_of_meals: 4
+    can_freeze: true
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 60
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 10
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - side dish
+    - healthy
+    ingredients:
+    - name: aubergine
+      quantity: 1
+      unit: whole
+    - name: tomatoes
+      quantity: 450
+      unit: g
+    - name: onion
+      quantity: 2
+      unit: whole
+    - name: red pepper
+      quantity: 2
+      unit: whole
+    - name: courgettes
+      quantity: 2
+      unit: whole
+    - name: garlic
+      quantity: 2
+      unit: whole
+    - name: dried thyme
+      quantity: 0.5
+      unit: tsp
+    - name: black olives
+      quantity: 0.5
+      unit: can
+      optional: true
+    - name: fresh basil
+      quantity: 0.5
+      unit: bag
+    - name: olive oil
+      quantity: 18
+      unit: tsp
+  mashed_potatoes:
+    name: Mashed potatoes
+    description: Simple mashed potatoes
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 10
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 5
+        total_minutes: 5
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - side dish
+    ingredients:
+    - name: potatoes
+      quantity: 1000
+      unit: g
+    - name: butter
+      quantity: 100
+      unit: g
+    - name: milk
+      quantity: 100
+      unit: ml
+  sauteed_potatoes:
+    name: Sauteed potatoes
+    description: Crispy potatoes having been sauteed.
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 10
+        total_minutes: 40
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 10
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - side dish
+    ingredients:
+    - name: new potatoes
+      quantity: 1000
+      unit: g
+    - name: Italian herb mix
+      quantity: 1
+      unit: tsp
+  potato_wedges:
+    name: Potato wedges
+    description: Oven-cooked potato wedges.
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 10
+        total_minutes: 40
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 40
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - side dish
+    - oven required
+    ingredients:
+    - name: potatoes
+      quantity: 1000
+      unit: g
+  fried_rice:
+    name: Fried rice
+    description: Simple fried rice.
+    link: https://www.recipetineats.com/egg-fried-rice/
+    number_of_meals: 2
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 15
+        total_minutes: 30
+      subsequent_occasions:
+        active_minutes: 10
+        total_minutes: 10
+    eat_at_work: false
+    unhealthy: false
+    tags:
+    - side dish
+    ingredients:
+    - name: onion
+      quantity: 0.5
+      unit: whole
+    - name: carrot
+      quantity: 1
+      unit: whole
+    - name: spring onion
+      quantity: 4
+      unit: whole
+    - name: white rice
+      quantity: 200
+      unit: g
+    - name: eggs
+      quantity: 2
+      unit: whole
+    - name: frozen peas
+      quantity: 50
+      unit: g
+    - name: oyster sauce
+      quantity: 3
+      unit: tsp
+    - name: light soy sauce
+      quantity: 3
+      unit: tsp
+    - name: sesame oil
+      quantity: 1
+      unit: tsp
+    - name: Chinese cooking wine or Mirin
+      quantity: 3
+      unit: tsp
+    - name: garlic
+      quantity: 2
+      unit: whole
+  pasta:
+    name: Pasta
+    description: Boiled pasta.
+    link: ''
+    number_of_meals: 1
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 5
+        total_minutes: 15
+      subsequent_occasions:
+        active_minutes: 0
+        total_minutes: 0
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - side-dish
+    - no subsequent occasions
+    ingredients:
+    - name: pasta
+      quantity: 125
+      unit: g
+  boiled_potatoes:
+    name: Boiled new potatoes
+    description: Boiled new potatoes
+    link: ''
+    number_of_meals: 4
+    can_freeze: false
+    cooking_time:
+      initial_cook:
+        active_minutes: 5
+        total_minutes: 25
+      subsequent_occasions:
+        active_minutes: 0
+        total_minutes: 0
+    eat_at_work: true
+    unhealthy: false
+    tags:
+    - side-dish
+    - no subsequent occasions
+    ingredients:
+    - name: new potatoes
+      quantity: 1000
+      unit: g
