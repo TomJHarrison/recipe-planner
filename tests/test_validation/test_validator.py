@@ -1,6 +1,6 @@
 import pytest
 
-from recipe_planner.validator import validate_ingredients, validate_recipes
+from recipe_planner.validation.validator import validate_ingredients, validate_recipes
 
 # ---------------------------------------------------------------------------
 # Fixtures / helpers

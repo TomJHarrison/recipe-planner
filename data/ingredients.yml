@@ -58,24 +58,3 @@ chicken_thigh_fillets:
     protein: 22
   substitutes_with:
   - chicken_breast_fillets
-onion:
-  name: onion
-  canonical_unit: whole
-  purchase_options:
-  - quantity: 1
-    cost: 0.20
-  shelf_life_days:
-    fridge: 20
-    pantry: 10
-  nutrition:
-    per: 100
-    unit: g
-    amount_per_canonical_unit: 150
-    source: MyFitnessPal
-    calories: 39
-    fat: 0.1
-    saturated_fat: 0.1
-    carbohydrates: 9.1
-    sugars: 6.2
-    fibre: 1.1
-    protein: 1

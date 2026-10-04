@@ -11,3 +11,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# contains USDA API key
+.env

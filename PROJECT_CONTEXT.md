@@ -1,0 +1,4 @@
+Let's recap the current situation:
+- I have a recipes yaml containing an entry for every recipe. Each recipe has a list of ingredients and their quantities. It also contains information such as the amount of cooking time required, whether the recipe is freezable, whether I could take it to work, and how many portions it makes
+- I have the beginnings of an ingredients yaml which has one entry per ingredient with information about the purchase options, prices, and nutrition information about the ingredient. It also contains information about whether the ingredient can be frozen or stored in a pantry, and how long it will last under each storage option
+- I have a validator which confirms that each of the above yaml files has the correct information and whether they reconcile with each other, for example, that every ingredient in the recipes yaml has a corresponding entry in the ingredients yaml
