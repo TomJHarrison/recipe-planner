@@ -32,29 +32,247 @@
 #   substitutes_with:  # a list of other ingredients that this one substitutes with (optional)
 #   - string
 #   - string
-chicken_thigh_fillets:
-  name: chicken thigh fillets
+garlic:
+  name: "garlic"
   aliases:
-  - chicken thighs
-  canonical_unit: g
-  purchase_options:
-  - quantity: 600
-    cost: 4.50
-  - quantity: 1000
-    cost: 7.00
-  shelf_life_days:
-    fridge: 3
-    freezer: 270
+  - garlic_clove
+  - garlic_cloves
+  canonical_unit: whole
+  is_staple: true
   nutrition:
     per: 100
     unit: g
-    source: MyFitnessPal
-    calories: 137
-    fat: 5
-    saturated_fat: 0.5
-    carbohydrates: 0
+    amount_per_canonical_unit: 3.0
+    source: "USDA FoodData Central"  # Garlic, raw (id=169230)
+    calories: 149
+    protein: 6.36
+    carbohydrates: 33.1
+    sugars: 1.0
+    fat: 0.5
+    saturated_fat: 0.089
+    fibre: 2.1
+onion:
+  name: "onion"
+  aliases:
+  - onions
+  canonical_unit: whole
+  purchase_options:
+  - quantity: 1.0
+    cost: 0.3
+  shelf_life_days:
+    pantry: 15
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 150.0
+    source: "USDA FoodData Central"  # Onions, raw (id=170000)
+    calories: 40.0
+    protein: 1.1
+    carbohydrates: 9.34
+    sugars: 4.24
+    fat: 0.1
+    saturated_fat: 0.042
+    fibre: 1.7
+chicken_stock_cube:
+  name: "chicken stock cube"
+  aliases:
+  - chicken_stock_cubes
+  canonical_unit: whole
+  is_staple: true
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 450
+    source: "USDA FoodData Central"  # Soup, chicken broth cubes, dry, prepared with water (id=174566)
+    calories: 5.0
+    protein: 0.39
+    carbohydrates: 0.62
     sugars: 0
+    fat: 0.12
+    saturated_fat: 0.03
     fibre: 0
-    protein: 22
+chicken_thigh_fillets:
+  name: "chicken thigh fillets"
+  aliases:
+  - chicken_thighs
+  canonical_unit: g
+  purchase_options:
+  - quantity: 600.0
+    cost: 4.5
+  - quantity: 900.0
+    cost: 6.0
+  - quantity: 1000.0
+    cost: 6.5
+  shelf_life_days:
+    fridge: 3
+    freezer: 180
+  nutrition:
+    per: 100
+    unit: g
+    source:    # no candidate chosen - needs manual lookup
+    calories:
+    protein:
+    carbohydrates:
+    sugars:
+    fat:
+    saturated_fat:
+    fibre:
   substitutes_with:
   - chicken_breast_fillets
+tomato_puree:
+  name: "tomato puree"
+  aliases:
+  - puree
+  canonical_unit: tsp
+  is_staple: true
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 5.0
+    source: "Sainsburys"    # no candidate chosen - needs manual lookup
+    calories: 89
+    protein: 4.3
+    carbohydrates: 15.3
+    sugars: 14.9
+    fat: 0.5
+    saturated_fat: 0.1
+    fibre: 2.9
+tomatoes:
+  name: "tomatoes"
+  canonical_unit: g
+  purchase_options:
+  - quantity: 300.0
+    cost: 1.0
+  shelf_life_days:
+    fridge: 15
+  nutrition:
+    per: 100
+    unit: g
+    source:    # no candidate chosen - needs manual lookup
+    calories:
+    protein:
+    carbohydrates:
+    sugars:
+    fat:
+    saturated_fat:
+    fibre:
+ground_cumin:
+  name: "ground cumin"
+  aliases:
+  - cumin
+  canonical_unit: tsp
+  is_staple: true
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 2.1
+    source: "USDA FoodData Central"  # Spices, cumin seed (id=170923)
+    calories: 375
+    protein: 17.8
+    carbohydrates: 44.2
+    sugars: 2.25
+    fat: 22.3
+    saturated_fat: 1.54
+    fibre: 10.5
+parmesan:
+  name: "parmesan"
+  canonical_unit: g
+  purchase_options:
+  - quantity: 200.0
+    cost: 4.0
+  shelf_life_days:
+    fridge: 30
+  nutrition:
+    per: 100
+    unit: g
+    source: "USDA FoodData Central"  # Cheese, parmesan, grated (id=171247)
+    calories: 420
+    protein: 28.4
+    carbohydrates: 13.9
+    sugars: 0.07
+    fat: 27.8
+    saturated_fat: 15.4
+    fibre: 0.0
+  substitutes_with:
+  - cheddar
+dried_oregano:
+  name: "dried oregano"
+  aliases:
+  - oregano
+  canonical_unit: tsp
+  is_staple: true
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 1.8
+    source: "USDA FoodData Central"  # Spices, oregano, dried (id=171328)
+    calories: 265
+    protein: 9.0
+    carbohydrates: 68.9
+    sugars: 4.09
+    fat: 4.28
+    saturated_fat: 1.55
+    fibre: 42.5
+red_onion:
+  name: "red onion"
+  aliases:
+  - red_onions
+  canonical_unit: whole
+  purchase_options:
+  - quantity: 1.0
+    cost: 0.3
+  shelf_life_days:
+    pantry: 15
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 150.0
+    source: "USDA FoodData Central"  # Onions, raw (id=170000)
+    calories: 40.0
+    protein: 1.1
+    carbohydrates: 9.34
+    sugars: 4.24
+    fat: 0.1
+    saturated_fat: 0.042
+    fibre: 1.7
+butter:
+  name: "butter"
+  aliases:
+  - salted_butter
+  canonical_unit: g
+  purchase_options:
+  - quantity: 250.0
+    cost: 1.8
+  shelf_life_days:
+    fridge: 30
+  nutrition:
+    per: 100
+    unit: g
+    source: "USDA FoodData Central"  # Butter, salted (id=173410)
+    calories: 717
+    protein: 0.85
+    carbohydrates: 0.06
+    sugars: 0.06
+    fat: 81.1
+    saturated_fat: 51.4
+    fibre: 0.0
+chopped_tomatoes:
+  name: "chopped tomatoes"
+  canonical_unit: can
+  purchase_options:
+  - quantity: 1.0
+    cost: 0.5
+  shelf_life_days:
+    pantry: 365
+  nutrition:
+    per: 100
+    unit: g
+    amount_per_canonical_unit: 400.0
+    source: "Sainsburys"   # no candidate chosen - needs manual lookup
+    calories: 24
+    protein: 1.2
+    carbohydrates: 3.5
+    sugars: 3.5
+    fat: 0.5
+    saturated_fat: 0.1
+    fibre: 0.9

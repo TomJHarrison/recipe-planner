@@ -1,20 +1,25 @@
+import requests
+
 from recipe_planner import data_extraction
 from recipe_planner.data_extraction.ingredients import (
     NutritionCandidate,
     UnexpectedNutrientNameError,
     append_ingredient_block,
+    describe_portion,
     extract_nutrients,
+    fetch_portions,
     find_missing_ingredients,
     load_draft_ids,
     prompt_for_aliases,
+    prompt_for_amount_per_canonical_unit,
     prompt_for_canonical_unit,
     prompt_for_float,
+    prompt_for_is_staple,
     prompt_for_nutrition_choice,
     prompt_for_purchase_options,
     prompt_for_shelf_life,
     prompt_for_substitutes,
     search_usda,
-    slugify,
 )
 
 
@@ -174,31 +179,6 @@ class TestExtractNutrients:
         macros = extract_nutrients(food)
 
         assert all(value is None for value in macros.values())
-
-
-# ---------------------------------------------------------------------------
-# slugify
-# ---------------------------------------------------------------------------
-
-
-class TestSlugify:
-    def test_spaces_become_underscores(self):
-        assert slugify("chicken stock cube") == "chicken_stock_cube"
-
-    def test_mixed_case_is_lowered(self):
-        assert slugify("Chicken Thigh Fillets") == "chicken_thigh_fillets"
-
-    def test_punctuation_collapses_to_underscore(self):
-        assert slugify("flour (plain / all purpose)") == "flour_plain_all_purpose"
-
-    def test_leading_and_trailing_whitespace_is_stripped(self):
-        assert slugify("  garlic  ") == "garlic"
-
-    def test_no_leading_or_trailing_underscore(self):
-        assert slugify("(optional) coriander") == "optional_coriander"
-
-    def test_already_valid_slug_is_unchanged(self):
-        assert slugify("onion") == "onion"
 
 
 # ---------------------------------------------------------------------------
@@ -504,6 +484,78 @@ class TestAppendIngredientBlock:
         assert "substitutes_with:" in content
         assert "- chicken_breast_fillets" in content
 
+    def test_amount_per_canonical_unit_value_is_written_when_given(self, tmp_path):
+        path = tmp_path / "draft.yml"
+        append_ingredient_block(
+            path,
+            "garlic",
+            "garlic",
+            None,
+            [],
+            "whole",
+            [{"quantity": 1, "cost": 0.2}],
+            {"pantry": 30},
+            [],
+            amount_per_canonical_unit=3.0,
+        )
+
+        content = path.read_text()
+        assert "amount_per_canonical_unit: 3.0" in content
+        assert "# required" not in content
+
+    def test_amount_per_canonical_unit_placeholder_added_for_ml_unit(self, tmp_path):
+        path = tmp_path / "draft.yml"
+        append_ingredient_block(
+            path,
+            "milk",
+            "milk",
+            None,
+            [],
+            "ml",
+            [{"quantity": 1000, "cost": 1.2}],
+            {"fridge": 5},
+            [],
+        )
+
+        assert "amount_per_canonical_unit:" in path.read_text()
+
+    def test_staple_writes_flag_and_omits_purchase_options_and_shelf_life(self, tmp_path):
+        path = tmp_path / "draft.yml"
+        append_ingredient_block(
+            path,
+            "garlic",
+            "garlic",
+            None,
+            [],
+            "whole",
+            None,
+            None,
+            [],
+            is_staple=True,
+        )
+
+        content = path.read_text()
+        assert "is_staple: true" in content
+        assert "purchase_options:" not in content
+        assert "shelf_life_days:" not in content
+        assert "nutrition:" in content
+
+    def test_non_staple_omits_flag(self, tmp_path):
+        path = tmp_path / "draft.yml"
+        append_ingredient_block(
+            path,
+            "onion",
+            "onion",
+            None,
+            [],
+            "whole",
+            [{"quantity": 1, "cost": 0.2}],
+            {"pantry": 30},
+            [],
+        )
+
+        assert "is_staple" not in path.read_text()
+
 
 # ---------------------------------------------------------------------------
 # Interactive prompts
@@ -516,8 +568,8 @@ class TestPromptForAliases:
         assert prompt_for_aliases() == []
 
     def test_collects_entries_until_blank(self, monkeypatch):
-        mock_input(monkeypatch, ["spring onion", "brown onion", ""])
-        assert prompt_for_aliases() == ["spring onion", "brown onion"]
+        mock_input(monkeypatch, ["spring_onion", "brown_onion", ""])
+        assert prompt_for_aliases() == ["spring_onion", "brown_onion"]
 
 
 class TestPromptForCanonicalUnit:
@@ -663,3 +715,118 @@ class TestSearchUsda:
             assert False, "expected UnexpectedNutrientNameError to be raised"
         except UnexpectedNutrientNameError:
             pass
+
+
+class TestDescribePortion:
+    def test_uses_portion_description_when_present(self):
+        assert describe_portion({"portionDescription": "1 cup, chopped"}) == "1 cup, chopped"
+
+    def test_quantity_not_specified_falls_back_to_amount_and_modifier(self):
+        portion = {"portionDescription": "Quantity not specified", "amount": 1, "modifier": "clove"}
+        assert describe_portion(portion) == "1 clove"
+
+    def test_undetermined_measure_unit_is_ignored(self):
+        portion = {"amount": 1, "modifier": "medium", "measureUnit": {"name": "undetermined"}}
+        assert describe_portion(portion) == "1 medium"
+
+    def test_real_measure_unit_is_included(self):
+        portion = {"amount": 2, "measureUnit": {"name": "tbsp"}}
+        assert describe_portion(portion) == "2 tbsp"
+
+
+class TestFetchPortions:
+    def test_returns_empty_list_when_no_api_key_set(self, monkeypatch):
+        monkeypatch.setattr(data_extraction.ingredients, "USDA_API_KEY", None)
+        assert fetch_portions("169230") == []
+
+    def patch_response(self, monkeypatch, food):
+        monkeypatch.setattr(data_extraction.ingredients, "USDA_API_KEY", "fake-key")
+        monkeypatch.setattr(
+            data_extraction.ingredients.requests, "get", lambda *a, **kw: FakeResponse(food)
+        )
+
+    def test_grams_are_per_single_unit(self, monkeypatch):
+        food = {
+            "foodPortions": [
+                {"amount": 1, "gramWeight": 3.0, "modifier": "clove"},
+                {"amount": 2, "gramWeight": 30.0, "portionDescription": "2 tbsp"},
+            ]
+        }
+        self.patch_response(monkeypatch, food)
+
+        assert fetch_portions("1") == [("1 clove", 3.0), ("2 tbsp", 15.0)]
+
+    def test_portions_without_gram_weight_are_skipped(self, monkeypatch):
+        self.patch_response(monkeypatch, {"foodPortions": [{"amount": 1, "modifier": "clove"}]})
+        assert fetch_portions("1") == []
+
+    def test_missing_food_portions_key_returns_empty_list(self, monkeypatch):
+        self.patch_response(monkeypatch, {})
+        assert fetch_portions("1") == []
+
+
+class TestPromptForAmountPerCanonicalUnit:
+    def candidate(self):
+        return NutritionCandidate(source="USDA", description="Garlic, raw", identifier="169230")
+
+    def patch_portions(self, monkeypatch, portions):
+        monkeypatch.setattr(data_extraction.ingredients, "fetch_portions", lambda fdc_id: portions)
+
+    def test_g_unit_returns_none_without_prompting(self, monkeypatch):
+        mock_input(monkeypatch, [])  # any call to input() would raise StopIteration
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "g") is None
+
+    def test_picks_a_usda_portion_by_number(self, monkeypatch):
+        self.patch_portions(monkeypatch, [("1 clove", 3.0), ("1 medium", 148.0)])
+        mock_input(monkeypatch, ["1"])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") == 3.0
+
+    def test_m_allows_manual_entry_when_portions_exist(self, monkeypatch):
+        self.patch_portions(monkeypatch, [("1 clove", 3.0)])
+        mock_input(monkeypatch, ["m", "4.5"])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") == 4.5
+
+    def test_blank_skips(self, monkeypatch):
+        self.patch_portions(monkeypatch, [("1 clove", 3.0)])
+        mock_input(monkeypatch, [""])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") is None
+
+    def test_invalid_choice_reprompts(self, monkeypatch):
+        self.patch_portions(monkeypatch, [("1 clove", 3.0)])
+        mock_input(monkeypatch, ["9", "1"])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") == 3.0
+
+    def test_no_candidate_goes_straight_to_manual_entry(self, monkeypatch):
+        mock_input(monkeypatch, ["150"])
+        assert prompt_for_amount_per_canonical_unit(None, "whole") == 150.0
+
+    def test_no_portions_goes_straight_to_manual_entry(self, monkeypatch):
+        self.patch_portions(monkeypatch, [])
+        mock_input(monkeypatch, ["150"])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") == 150.0
+
+    def test_non_positive_manual_value_reprompts(self, monkeypatch):
+        mock_input(monkeypatch, ["0", "abc", "2"])
+        assert prompt_for_amount_per_canonical_unit(None, "tsp") == 2.0
+
+    def test_fetch_failure_falls_back_to_manual_entry(self, monkeypatch):
+        def boom(fdc_id):
+            raise requests.RequestException("boom")
+
+        monkeypatch.setattr(data_extraction.ingredients, "fetch_portions", boom)
+        mock_input(monkeypatch, ["3"])
+        assert prompt_for_amount_per_canonical_unit(self.candidate(), "whole") == 3.0
+
+
+class TestPromptForIsStaple:
+    def test_y_returns_true(self, monkeypatch):
+        mock_input(monkeypatch, ["Y"])
+        assert prompt_for_is_staple() is True
+
+    def test_blank_returns_false(self, monkeypatch):
+        mock_input(monkeypatch, [""])
+        assert prompt_for_is_staple() is False
+
+    def test_n_returns_false(self, monkeypatch):
+        mock_input(monkeypatch, ["n"])
+        assert prompt_for_is_staple() is False

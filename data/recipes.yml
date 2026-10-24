@@ -516,7 +516,7 @@ main_dishes:
     name: Spanish style chicken
     description: A tray bake of chicken thighs with chorizo, peppers and potatoes.
     link: https://www.hairybikers.com/recipes/view/spanish-style-chicken-bake
-    number_of_meals: 5
+    number_of_meals: 4
     can_freeze: false
     cooking_time:
       initial_cook:
@@ -671,6 +671,7 @@ main_dishes:
     - name: tomatoes
       quantity: 30
       unit: g
+      optional: true
     side_dishes:
     - potato_salad
     - sauteed_potatoes

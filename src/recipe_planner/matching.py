@@ -1,3 +1,17 @@
+import re
+
+
+def slugify(name: str) -> str:
+    """..."""  # keep the existing docstring
+    slug = re.sub(r"[^a-z0-9]+", "_", name.strip().lower())
+    return slug.strip("_")
+
+
+def unslugify(slug: str) -> str:
+    """..."""  # keep the existing docstring
+    return slug.replace("_", " ").strip()
+
+
 def flatten_recipes(recipe_dict: dict) -> dict:
     """Flatten a {category: {recipe_id: recipe}} structure into a single
     {recipe_id: recipe} mapping, regardless of which category each recipe

@@ -1,5 +1,5 @@
 from recipe_planner.io import INGREDIENT_FILE, RECIPE_FILE, load_yaml
-from recipe_planner.matching import find_ingredient_match, flatten_recipes
+from recipe_planner.matching import find_ingredient_match, flatten_recipes, slugify
 
 VALID_UNITS = {"g", "ml", "tsp", "whole", "can", "bag"}
 VALID_NUTRITION_UNITS = {"g", "ml"}
@@ -42,12 +42,13 @@ INGREDIENT_STRUCTURE = {
     "required": {
         "name": str,
         "canonical_unit": str,
-        "purchase_options": list,
-        "shelf_life_days": dict,
         "nutrition": dict,
     },
     "optional": {
         "aliases": list,
+        "is_staple": bool,
+        "purchase_options": list,
+        "shelf_life_days": dict,
         "substitutes_with": list,
     },
 }
@@ -65,7 +66,7 @@ NUTRITION_STRUCTURE = {
         "per": int,
         "unit": str,
         "source": str,
-        "calories": int,
+        "calories": (int, float),
         "protein": (int, float),
         "carbohydrates": (int, float),
         "sugars": (int, float),
@@ -145,6 +146,20 @@ def check_unknown_fields(data: dict, allowed_fields: set, path: str = "") -> lis
         if field not in allowed_fields:
             full_path = f"{path}.{field}" if path else field
             errors.append(f"{full_path}: unrecognised field")
+    return errors
+
+
+def check_slug_entries(entries: list, field: str) -> list:
+    """Flag any entry in a list of ingredient ids (aliases, substitutes_with)
+    that isn't a string already in slug form, i.e. unchanged by slugify()."""
+    errors = []
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, str):
+            errors.append(f"{field}[{index}]: expected str, got {type(entry).__name__}")
+        elif slugify(entry) != entry:
+            errors.append(
+                f"{field}[{index}]: '{entry}' is not slugified (expected '{slugify(entry)}')"
+            )
     return errors
 
 
@@ -386,6 +401,14 @@ def validate_ingredient(ingredient_id: str, ingredient: dict, all_ingredient_ids
 
     errors = validate_structure(ingredient, INGREDIENT_STRUCTURE)
 
+    # purchase_options and shelf_life_days are only optional for staples
+    if ingredient.get("is_staple") is not True:
+        for field in ("purchase_options", "shelf_life_days"):
+            if field not in ingredient:
+                errors.append(
+                    f"{field}: missing required field (required unless is_staple is true)"
+                )
+
     allowed_fields = set(INGREDIENT_STRUCTURE["required"]) | set(INGREDIENT_STRUCTURE["optional"])
     errors.extend(check_unknown_fields(ingredient, allowed_fields))
 
@@ -407,8 +430,13 @@ def validate_ingredient(ingredient_id: str, ingredient: dict, all_ingredient_ids
             )
         )
 
+    aliases = ingredient.get("aliases")
+    if isinstance(aliases, list):
+        errors.extend(check_slug_entries(aliases, "aliases"))
+
     substitutes_with = ingredient.get("substitutes_with")
     if isinstance(substitutes_with, list):
+        errors.extend(check_slug_entries(substitutes_with, "substitutes_with"))
         for substitute_id in substitutes_with:
             if substitute_id == ingredient_id:
                 errors.append(f"substitutes_with: '{ingredient_id}' cannot substitute with itself")
@@ -490,10 +518,12 @@ def validate_ingredients(ingredient_dict: dict) -> list:
     8. Validate substitutes_with (if it's a list):
        - No ingredient lists itself as a substitute.
        - Every referenced ingredient_id actually exists in the file.
+       - Entries must already be in slug form (unchanged by slugify)
     9. Across all ingredients, check that no two different ingredients
        declare the same alias (and that an alias doesn't collide with
        another ingredient's name under a different id), since a shared
        alias would make automatic name-to-ingredient lookup ambiguous.
+    10. Aliases entries must already be in slug form (unchanged by slugify)
 
     Returns a flat list of human-readable error strings, each prefixed with
     the ingredient_id it relates to (alias-collision messages name both

@@ -410,3 +410,76 @@ class TestValidateIngredients:
         errors = validate_ingredients(ingredient_dict)
 
         assert has_error_containing(errors, "spring onion", "onion", "red_onion")
+
+    def test_non_slugified_alias_is_reported(self):
+        ingredient = valid_ingredient()
+        ingredient["aliases"] = ["spring onion"]
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "aliases", "spring onion", "spring_onion")
+
+    def test_slugified_alias_has_no_error(self):
+        ingredient = valid_ingredient()
+        ingredient["aliases"] = ["spring_onion"]
+
+        assert validate_ingredients(wrap_ingredient(ingredient)) == []
+
+    def test_non_string_alias_is_reported(self):
+        ingredient = valid_ingredient()
+        ingredient["aliases"] = [123]
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "aliases", "expected str")
+
+    def test_non_slugified_substitute_is_reported(self):
+        ingredient = valid_ingredient()
+        ingredient["substitutes_with"] = ["Chicken Breast"]
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "substitutes_with", "Chicken Breast", "chicken_breast")
+
+    def test_staple_without_purchase_options_or_shelf_life_is_valid(self):
+        ingredient = valid_ingredient()
+        ingredient["is_staple"] = True
+        del ingredient["purchase_options"]
+        del ingredient["shelf_life_days"]
+
+        assert validate_ingredients(wrap_ingredient(ingredient)) == []
+
+    def test_explicit_non_staple_without_purchase_options_is_reported(self):
+        ingredient = valid_ingredient()
+        ingredient["is_staple"] = False
+        del ingredient["purchase_options"]
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "purchase_options", "missing required field")
+
+    def test_staple_still_requires_nutrition(self):
+        ingredient = valid_ingredient()
+        ingredient["is_staple"] = True
+        del ingredient["nutrition"]
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "nutrition", "missing required field")
+
+    def test_staple_with_purchase_options_present_is_still_validated(self):
+        ingredient = valid_ingredient()
+        ingredient["is_staple"] = True
+        ingredient["purchase_options"] = []
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "purchase_options", "empty")
+
+    def test_is_staple_wrong_type_is_reported(self):
+        ingredient = valid_ingredient()
+        ingredient["is_staple"] = "yes please"
+
+        errors = validate_ingredients(wrap_ingredient(ingredient))
+
+        assert has_error_containing(errors, "is_staple")

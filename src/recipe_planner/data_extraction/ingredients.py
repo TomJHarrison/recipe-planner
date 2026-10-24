@@ -26,10 +26,14 @@ mapping below was confirmed by inspecting ~10-15 ingredients' worth of
 results; extract_nutrients() still checks every food against it at
 runtime and raises if a food ever disagrees, rather than silently trusting
 the mapping forever.
+
+The script will prompt for the amount per canonical unit when the ingredient
+is not measured in grams. For example, garlic is measured as "whole". But the
+nutrition data comes through in grams. Therefore we need to know the number
+of grams per whole unit so we can calculate the nutritional information.
 """
 
 import os
-import re
 import sys
 from collections import Counter
 from dataclasses import dataclass
@@ -39,15 +43,19 @@ import yaml
 from dotenv import load_dotenv
 
 from recipe_planner.io import INGREDIENT_FILE, PROJECT_ROOT, RECIPE_FILE, load_yaml
-from recipe_planner.matching import find_ingredient_match, flatten_recipes
+from recipe_planner.matching import find_ingredient_match, flatten_recipes, slugify, unslugify
 
 load_dotenv()
 USDA_API_KEY = os.environ.get("USDA_API_KEY")
 
 USDA_SEARCH_URL = "https://api.nal.usda.gov/fdc/v1/foods/search"
+USDA_FOOD_URL = "https://api.nal.usda.gov/fdc/v1/food"
 
 MAX_CANDIDATES_PER_SOURCE = 5
 VALID_CANONICAL_UNITS = ["g", "ml", "tsp", "whole", "can", "bag"]
+# USDA Foundation/SR Legacy nutrition is always reported per 100 g, so this is
+# the unit written to nutrition.unit for every ingredient.
+NUTRITION_UNIT = "g"
 SHELF_LIFE_KEYS = ["fridge", "freezer", "pantry"]
 NUTRITION_DRAFT_OUTPUT_PATH = PROJECT_ROOT / "data" / "nutrition_draft.yml"
 
@@ -166,6 +174,57 @@ def search_usda(query: str) -> list[NutritionCandidate]:
     return candidates
 
 
+def describe_portion(portion: dict) -> str:
+    """Build a readable label for one USDA food portion, e.g. "1 clove".
+
+    Foundation foods usually carry a portionDescription; SR Legacy foods
+    usually carry only amount + modifier (and a measureUnit that is often the
+    placeholder "undetermined"), so fall back to assembling a label."""
+    description = portion.get("portionDescription")
+    if description and description != "Quantity not specified":
+        return description
+
+    amount = portion.get("amount") or 1
+    parts = [f"{amount:g}"]
+    measure_unit = portion.get("measureUnit")
+    measure_name = measure_unit.get("name") if isinstance(measure_unit, dict) else measure_unit
+    if measure_name and measure_name != "undetermined":
+        parts.append(str(measure_name))
+    if portion.get("modifier"):
+        parts.append(str(portion["modifier"]))
+    return " ".join(parts)
+
+
+def fetch_portions(fdc_id: str) -> list[tuple[str, float]]:
+    """Fetch the household portions USDA records for one food and return
+    (description, grams_in_one_unit) pairs, e.g. [("1 clove", 3.0)].
+
+    The search endpoint returns an abridged record without portions, so this
+    needs the single-food endpoint. gramWeight is divided by amount so every
+    result is the weight of exactly one unit (USDA sometimes records e.g.
+    "2 tbsp = 30 g"). Portions with no gramWeight are skipped. Returns an empty
+    list if there's no API key or the food has no portions."""
+    if not USDA_API_KEY:
+        return []
+
+    response = requests.get(
+        f"{USDA_FOOD_URL}/{fdc_id}",
+        params={"api_key": USDA_API_KEY},
+        timeout=10,
+    )
+    response.raise_for_status()
+    food = response.json()
+
+    portions = []
+    for portion in food.get("foodPortions") or []:
+        gram_weight = portion.get("gramWeight")
+        if not gram_weight:
+            continue
+        amount = portion.get("amount") or 1
+        portions.append((describe_portion(portion), round(gram_weight / amount, 2)))
+    return portions
+
+
 def print_candidate(index: int, candidate: NutritionCandidate) -> None:
     print(f"  [{index}] {candidate.description}  (id={candidate.identifier})")
     if candidate.is_complete():
@@ -209,15 +268,6 @@ def lookup_nutrition(query: str) -> NutritionCandidate | None:
 
 
 # --- discovering what's missing -----------------------------------------
-
-
-def slugify(name: str) -> str:
-    """Turn a free-text recipe ingredient name into a snake_case id
-    suitable as an ingredients.yml key, e.g. "Chicken Stock Cube" ->
-    "chicken_stock_cube". This is a best-effort default, not a guarantee -
-    worth a glance at the printed id before confirming each ingredient."""
-    slug = re.sub(r"[^a-z0-9]+", "_", name.strip().lower())
-    return slug.strip("_")
 
 
 def load_draft_ids(path) -> set[str]:
@@ -281,7 +331,7 @@ def prompt_for_aliases() -> list[str]:
         value = input(f"    alias {len(aliases) + 1} (or blank to finish): ").strip()
         if not value:
             return aliases
-        aliases.append(value)
+        aliases.append(slugify(value))
 
 
 def prompt_for_canonical_unit() -> str:
@@ -291,6 +341,78 @@ def prompt_for_canonical_unit() -> str:
         if value in VALID_CANONICAL_UNITS:
             return value
         print(f"  Not a valid unit - must be one of: {options}")
+
+
+def prompt_for_grams() -> float | None:
+    """Prompt for a positive number of grams. Blank skips (returns None)."""
+    while True:
+        raw = input("    grams in one unit (blank to skip): ").strip()
+        if not raw:
+            return None
+        try:
+            value = float(raw)
+        except ValueError:
+            print("    Not a valid number, try again.")
+            continue
+        if value <= 0:
+            print("    Must be greater than zero, try again.")
+            continue
+        return value
+
+
+def prompt_for_amount_per_canonical_unit(
+    candidate: NutritionCandidate | None, canonical_unit: str
+) -> float | None:
+    """Ask how many grams one canonical_unit weighs (or measures).
+
+    Not needed, so returns None without prompting, when canonical_unit already
+    matches NUTRITION_UNIT. Otherwise, if a USDA candidate was chosen, offers
+    that food's recorded portions to pick from, with 'm' to type a value
+    manually. With no candidate or no portions it goes straight to manual
+    entry. A blank answer skips (returns None), which leaves a placeholder in
+    the output for the validator to flag later."""
+    if canonical_unit == NUTRITION_UNIT:
+        return None
+
+    print(f"  amount_per_canonical_unit - grams in one '{canonical_unit}':")
+
+    portions = []
+    if candidate is not None:
+        try:
+            portions = fetch_portions(candidate.identifier)
+        except requests.RequestException as exc:
+            print(f"    Could not fetch USDA portions ({exc}) - enter a value manually.")
+        else:
+            if not portions:
+                print("    No USDA portions recorded for this food - enter a value manually.")
+
+    if not portions:
+        return prompt_for_grams()
+
+    for index, (description, grams) in enumerate(portions, start=1):
+        print(f"    [{index}] {description} = {grams:g} g")
+
+    while True:
+        raw = (
+            input(f"    Pick [1-{len(portions)}], 'm' to enter grams manually, or blank to skip: ")
+            .strip()
+            .lower()
+        )
+        if not raw:
+            return None
+        if raw == "m":
+            return prompt_for_grams()
+        if raw.isdigit() and 1 <= int(raw) <= len(portions):
+            return portions[int(raw) - 1][1]
+        print("    Not a valid choice, try again.")
+
+
+def prompt_for_is_staple() -> bool:
+    """Ask whether this ingredient is a staple, i.e. always in stock and
+    assumed available. Staples skip the purchase option and shelf life
+    prompts. Anything other than 'y' means no."""
+    answer = input("  Is this a staple (always in stock; skips price and shelf life)? [y/N]: ")
+    return answer.strip().lower() == "y"
 
 
 def prompt_for_float(prompt_text: str) -> float:
@@ -337,7 +459,7 @@ def prompt_for_substitutes() -> list[str]:
         value = input(f"    substitute {len(substitutes) + 1} (or blank to finish): ").strip()
         if not value:
             return substitutes
-        substitutes.append(value)
+        substitutes.append(slugify(value))
 
 
 # --- writing each completed ingredient immediately ------------------------
@@ -353,6 +475,8 @@ def append_ingredient_block(
     purchase_options: list[dict],
     shelf_life: dict,
     substitutes: list[str],
+    amount_per_canonical_unit: float | None = None,
+    is_staple: bool = False,
 ) -> None:
     """Append one completed ingredient's YAML block to the draft output
     file and flush immediately, so a crash or a deliberate quit after this
@@ -372,24 +496,32 @@ def append_ingredient_block(
 
         f.write(f"  canonical_unit: {canonical_unit}\n")
 
-        f.write("  purchase_options:\n")
-        for option in purchase_options:
-            f.write(f"  - quantity: {option['quantity']}\n")
-            f.write(f"    cost: {option['cost']}\n")
+        if is_staple:
+            f.write("  is_staple: true\n")
 
-        f.write("  shelf_life_days:\n")
-        for key in SHELF_LIFE_KEYS:
-            if key in shelf_life:
-                f.write(f"    {key}: {shelf_life[key]}\n")
+        if purchase_options:
+            f.write("  purchase_options:\n")
+            for option in purchase_options:
+                f.write(f"  - quantity: {option['quantity']}\n")
+                f.write(f"    cost: {option['cost']}\n")
+
+        if shelf_life:
+            f.write("  shelf_life_days:\n")
+            for key in SHELF_LIFE_KEYS:
+                if key in shelf_life:
+                    f.write(f"    {key}: {shelf_life[key]}\n")
 
         f.write("  nutrition:\n")
         f.write("    per: 100\n")
-        f.write("    unit: g\n")
-        if canonical_unit not in ("g", "ml"):
-            f.write(
-                "    amount_per_canonical_unit:    "
-                "# required: how much one canonical_unit weighs/measures, in `unit` above\n"
-            )
+        f.write(f"    unit: {NUTRITION_UNIT}\n")
+        if canonical_unit != NUTRITION_UNIT:
+            if amount_per_canonical_unit is not None:
+                f.write(f"    amount_per_canonical_unit: {amount_per_canonical_unit}\n")
+            else:
+                f.write(
+                    "    amount_per_canonical_unit:    "
+                    "# required: how much one canonical_unit weighs/measures, in `unit` above\n"
+                )
         if candidate is not None:
             f.write(
                 f'    source: "{candidate.source}"  '
@@ -420,7 +552,6 @@ def append_ingredient_block(
             for substitute in substitutes:
                 f.write(f"  - {substitute}\n")
 
-        f.write("\n")
         f.flush()
 
 
@@ -438,6 +569,8 @@ def main():
 
     recipe_dict = load_yaml(RECIPE_FILE)
     ingredient_dict = load_yaml(INGREDIENT_FILE)
+    if ingredient_dict is None:
+        ingredient_dict = {}
 
     missing = find_missing_ingredients(recipe_dict, ingredient_dict)
 
@@ -450,10 +583,12 @@ def main():
     try:
         for index, (name, count) in enumerate(missing, start=1):
             ingredient_id = slugify(name)
+            display_name = unslugify(name)
 
             print(f"\n{'=' * 70}")
             print(
-                f'[{index}/{len(missing)}] "{name}"  (appears in {count} recipe ingredient line(s))'
+                f'[{index}/{len(missing)}] "{display_name}"  '
+                f"(appears in {count} recipe ingredient line(s))"
             )
             print(f"Will be saved as: {ingredient_id}")
             print("=" * 70)
@@ -468,23 +603,29 @@ def main():
                 )
                 return
 
-            candidate = lookup_nutrition(name)
+            candidate = lookup_nutrition(display_name)
             aliases = prompt_for_aliases()
             canonical_unit = prompt_for_canonical_unit()
-            purchase_options = prompt_for_purchase_options()
-            shelf_life = prompt_for_shelf_life()
+            amount_per_canonical_unit = prompt_for_amount_per_canonical_unit(
+                candidate, canonical_unit
+            )
+            is_staple = prompt_for_is_staple()
+            purchase_options = None if is_staple else prompt_for_purchase_options()
+            shelf_life = None if is_staple else prompt_for_shelf_life()
             substitutes = prompt_for_substitutes()
 
             append_ingredient_block(
                 INGREDIENT_FILE,
                 ingredient_id,
-                name,
+                display_name,
                 candidate,
                 aliases,
                 canonical_unit,
                 purchase_options,
                 shelf_life,
                 substitutes,
+                amount_per_canonical_unit=amount_per_canonical_unit,
+                is_staple=is_staple,
             )
             print(f"  Saved '{ingredient_id}' to {INGREDIENT_FILE}.")
 

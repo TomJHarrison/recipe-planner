@@ -1,4 +1,4 @@
-from recipe_planner.matching import find_ingredient_match, flatten_recipes
+from recipe_planner.matching import find_ingredient_match, flatten_recipes, slugify, unslugify
 
 
 class TestFlattenRecipes:
@@ -137,3 +137,34 @@ class TestFindIngredientMatch:
     def test_empty_ingredient_dict_returns_not_found(self):
         result = find_ingredient_match("anything", {})
         assert result == ("not_found", None)
+
+
+class TestSlugify:
+    def test_spaces_become_underscores(self):
+        assert slugify("chicken stock cube") == "chicken_stock_cube"
+
+    def test_mixed_case_is_lowered(self):
+        assert slugify("Chicken Thigh Fillets") == "chicken_thigh_fillets"
+
+    def test_punctuation_collapses_to_underscore(self):
+        assert slugify("flour (plain / all purpose)") == "flour_plain_all_purpose"
+
+    def test_leading_and_trailing_whitespace_is_stripped(self):
+        assert slugify("  garlic  ") == "garlic"
+
+    def test_no_leading_or_trailing_underscore(self):
+        assert slugify("(optional) coriander") == "optional_coriander"
+
+    def test_already_valid_slug_is_unchanged(self):
+        assert slugify("onion") == "onion"
+
+
+class TestUnslugify:
+    def test_underscores_become_spaces(self):
+        assert unslugify("chicken_stock_cube") == "chicken stock cube"
+
+    def test_single_word_is_unchanged(self):
+        assert unslugify("onion") == "onion"
+
+    def test_round_trips_with_slugify(self):
+        assert slugify(unslugify("red_onion")) == "red_onion"
